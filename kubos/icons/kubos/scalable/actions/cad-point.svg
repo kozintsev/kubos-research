@@ -1,0 +1,17 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created using Karbon, part of Calligra: http://www.calligra.org/karbon -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="51.2pt" height="51.2pt">
+<defs>
+  <radialGradient id="gradient0" gradientTransform="matrix(1 -5.55112e-17 5.55112e-17 0.698529 -190.919 -445.978)" gradientUnits="objectBoundingBox" cx="3.27941146926" cy="14.02179716267" fx="3.27941146926" fy="14.02179716267" r="0.40989893319" spreadMethod="pad">
+   <stop stop-color="#ffffff" offset="0.00000000000" stop-opacity="1.00000000000"/>
+   <stop stop-color="#ffffff" offset="1.00000000000" stop-opacity="0.00000000000"/>
+  </radialGradient>
+ </defs>
+<g id="layer1">
+  <g id="g3160" transform="translate(24.7307, 25.0618)" fill="none">
+   <path id="path3162" transform="matrix(-0.162086 -0.0036825 0.0036825 -0.162086 16.0281 16.4072)" fill="#ffa900" stroke="#000000" stroke-width="5.80000019000" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4.00000000000" d="M97.1429 48.5714C97.1429 75.3967 75.3967 97.1429 48.5714 97.1429C21.7462 97.1429 0 75.3967 0 48.5714C0 21.7462 21.7462 0 48.5714 0C75.3967 0 97.1429 21.7462 97.1429 48.5714Z"/>
+   <path id="path3164" transform="matrix(-0.139917 0.0819078 -0.0819078 -0.139917 13.7074 6.67208)" fill="url(#gradient0)" d="M68.6904 23.9911C68.6904 37.2411 53.3135 47.9822 34.3452 47.9822C15.3769 47.9822 0 37.2411 0 23.9911C0 10.7412 15.3769 0 34.3452 0C53.3135 0 68.6904 10.7412 68.6904 23.9911Z"/>
+  </g>
+ </g>
+</svg>

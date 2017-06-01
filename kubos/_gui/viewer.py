@@ -9,13 +9,13 @@ from OCC import TopAbs
 from OCC.gp import gp_Ax3, gp_Dir
 from OCC.Quantity import Quantity_Color
 
-from lib.gp_ import gp_Pnt_
-from lib.viewer import Viewer
+from ..lib.gp_ import gp_Pnt_
+from ..lib.viewer import Viewer
 
-from data import appdata
-import std_events
-import active_tool
-import tools.select
+from ..data import appdata
+from .. import std_events
+from .. import active_tool
+from ..tools import select
 
 # some of this module was taken from OCC.Display.OCCViewer
 # It might be a good idea to look at code of that module if this one
@@ -133,7 +133,7 @@ class KubosViewer(Viewer):
             # for panning or zooming: clear the preview
             self.replace_shapes('preview', [])
         elif event.buttons() == QtCore.Qt.LeftButton:
-            if (active_tool.active_tool is tools.select.select and
+            if (active_tool.active_tool is select.select and
                     appdata.get('input') is not None):
                 # FIXME: 1.0: the selection will be cleared immediately after
                 # this command as the active context will be closed

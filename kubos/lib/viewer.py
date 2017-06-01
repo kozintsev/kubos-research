@@ -16,7 +16,7 @@ from OCC.Visualization import Display3d
 from OCC.AIS import AIS_Shaded, AIS_Shape, AIS_WireFrame
 from OCC.TopoDS import TopoDS_Shape
 
-from lib.vec import vec
+from ..lib.vec import vec
 
 if sys.platform != 'win32' and not 'CSF_GraphicShr' in os.environ:
     # Taken from OCC.Display.OCCViewer

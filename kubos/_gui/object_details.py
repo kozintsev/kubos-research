@@ -2,11 +2,11 @@ from __future__ import absolute_import,division,print_function,unicode_literals
 
 from PyQt4 import QtGui
 
-import std_events
-import doc
-from lib.label_util import tag_list
+from .. import std_events
+from .. import doc
+from ..lib.label_util import tag_list
 
-import gui
+from .. import gui
 
 
 class ObjectDetailsDock(QtGui.QDockWidget):

@@ -2,7 +2,7 @@ from __future__ import absolute_import,division,print_function,unicode_literals
 
 from PyQt4 import QtCore
 
-from tools.tool import Tool
+from .tool import Tool
 
 
 class Delete(Tool):

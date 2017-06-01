@@ -4,9 +4,9 @@ from __future__ import absolute_import,division,print_function,unicode_literals
 
 from PyQt4 import QtGui, QtCore
 
-from lib.action import Action
-from data import appdata
-from gui import win
+from ..lib.action import Action
+from ..data import appdata
+from ..gui import win
 
 
 class AboutDlg(QtGui.QDialog):

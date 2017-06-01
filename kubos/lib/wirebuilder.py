@@ -1,14 +1,14 @@
 from __future__ import absolute_import,division,print_function,unicode_literals
 
-from OCC.TopExp import TopExp
+from OCC.TopExp import _TopExp as TopExp
 from OCC import TopAbs
 from OCC.ShapeAnalysis import ShapeAnalysis_WireOrder
-from OCC.Precision import Precision
+from OCC.Precision import _Precision as Precision
 from OCC.BRepBuilderAPI import BRepBuilderAPI_MakeWire
 from OCC.BRepBuilderAPI import BRepBuilderAPI_WireDone
 
-from lib import gp_
-from lib.subshapes import subshapes
+from ..lib import gp_
+from ..lib.subshapes import subshapes
 
 
 def join(list):

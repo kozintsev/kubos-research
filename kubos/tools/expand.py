@@ -4,9 +4,9 @@ from PyQt4 import QtCore
 
 from OCC import gp, BRepPrimAPI, BRepBuilderAPI, TopoDS
 
-from lib.vec import vec
-from tools.tool import Tool
-from exceptions_ import InvalidInputException
+from ..lib.vec import vec
+from .tool import Tool
+from ..exceptions_ import InvalidInputException
 
 
 class Extrude(Tool):

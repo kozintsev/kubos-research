@@ -2,9 +2,9 @@ from __future__ import absolute_import,division,print_function,unicode_literals
 
 from functools import partial
 
-from data import appdata
-import active_tool
-from lib.action import Action
+from ..data import appdata
+from .. import active_tool
+from ..lib.action import Action
 
 
 class Tool(object):

@@ -5,8 +5,8 @@ from OCC.BRepPrimAPI import BRepPrimAPI_MakeSphere
 from PyQt4 import QtCore
 
 from .tool import Tool
-from exceptions_ import InvalidInputException
-from lib.vec import vec
+from ..exceptions_ import InvalidInputException
+from ..lib.vec import vec
 
 
 class Point(Tool):

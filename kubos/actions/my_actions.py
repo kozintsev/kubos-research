@@ -2,12 +2,12 @@
 
 from __future__ import absolute_import,division,print_function,unicode_literals
 
-from lib.action import Action
+from ..lib.action import Action
 
 
 def demo_():
     from math import pi, sin, cos
-    from gui import viewer_3d
+    from ..gui import viewer_3d
     from OCC import BRepPrimAPI
 
     quader = BRepPrimAPI.BRepPrimAPI_MakeBox(3, 4, 5).Solid()
@@ -23,7 +23,7 @@ demo = Action(demo_, ['M&y Actions', '&Demo'])
 
 
 def doc_demo_():
-    from doc import doc_ctrl
+    from ..doc import doc_ctrl
     from OCC import BRepPrimAPI
     quader = BRepPrimAPI.BRepPrimAPI_MakeBox(3, 4, 5).Solid()
     kugel = BRepPrimAPI.BRepPrimAPI_MakeSphere(2).Solid()

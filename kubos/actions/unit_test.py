@@ -6,9 +6,9 @@ from __future__ import absolute_import,division,print_function,unicode_literals
 from PyQt4.QtTest import QTest
 from PyQt4.QtCore import Qt
 
-from gui import win
-from lib.action import Action
-from lib import qtest
+from ..gui import win
+from ..lib.action import Action
+from ..lib import qtest
 
 # initialize the qtest module
 qtest.init(win)

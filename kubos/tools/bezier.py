@@ -6,9 +6,9 @@ from OCC import BRepBuilderAPI, GC
 from OCC.TColgp import TColgp_Array1OfPnt
 from OCC.GeomAPI import GeomAPI_PointsToBSpline
 
-from tools.tool import Tool
+from .tool import Tool
 
-from exceptions_ import InvalidInputException
+from ..exceptions_ import InvalidInputException
 
 class Bspline3(Tool):
     def __init__(self):

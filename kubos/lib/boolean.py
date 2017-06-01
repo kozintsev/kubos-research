@@ -5,8 +5,8 @@ from OCC.BRep import BRep_Tool
 from OCC.GeomAPI import GeomAPI_ExtremaCurveCurve
 from OCC.BRepBuilderAPI import BRepBuilderAPI_MakeVertex
 
-from exceptions_ import ConstructionError
-from lib.subshapes import subshapes
+from ..exceptions_ import ConstructionError
+from ..lib.subshapes import subshapes
 
 
 def intersection(a, b):

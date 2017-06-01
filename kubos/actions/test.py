@@ -1,18 +1,18 @@
 from __future__ import absolute_import,division,print_function,unicode_literals
 
-import imp
+# import imp
 
 from OCC import BRepPrimAPI, TopAbs
 from PyQt4 import QtGui
 
-import doc
-from lib import gp_
-from data import appdata
-from lib.action import Action
-from gui import viewer_3d
-from gui import win
-from doc import doc_ctrl
-from std_events import document_modified
+from .. import doc
+from ..lib import gp_
+from ..data import appdata
+from ..lib.action import Action
+from ..gui import viewer_3d
+from ..gui import win
+from ..doc import doc_ctrl
+from ..std_events import document_modified
 
 
 def sphere1_():
@@ -61,8 +61,8 @@ list_data = Action(list_data_, ('Te&sts', 'List &Data'))
 
 
 def list_children_():
-    from lib import label_util
-    import doc
+    from ..lib import label_util
+    from .. import doc
     print(label_util.child_list(doc.doc_ctrl.top_label))
 list_children = Action(list_children_, ('Te&sts', 'List &Children'))
 

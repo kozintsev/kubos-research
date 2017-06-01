@@ -4,15 +4,16 @@ import imp
 import sys
 from os import path
 import subprocess
-import __builtin__
+# import __builtin__
+import builtins
 
 from PyQt4 import QtGui
 
-from data import appdata
-from lib.action import Action
-from gui import editor
-from gui import win
-from doc import doc_ctrl
+from ..data import appdata
+from ..lib.action import Action
+from ..gui import editor
+from ..gui import win
+from ..doc import doc_ctrl
 
 module = None
 
@@ -55,7 +56,7 @@ def exec_script():
             module = imp.load_source('script', filename)
         else:
             module.__dict__.clear()
-            for (key, value) in {'__builtins__':__builtin__.__dict__,
+            for (key, value) in {'__builtins__':builtins .__dict__,
                                  '__doc__':None,
                                  '__file__':None,
                                  '__name__':'script',

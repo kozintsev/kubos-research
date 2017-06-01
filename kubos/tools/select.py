@@ -1,6 +1,6 @@
 from __future__ import absolute_import,division,print_function,unicode_literals
 
-from tools.tool import Tool
+from .tool import Tool
 
 
 class Select(Tool):

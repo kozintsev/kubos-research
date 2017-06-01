@@ -14,9 +14,9 @@ from OCC.Quantity import Quantity_Color
 from OCC import TopoDS, TopAbs
 from OCC.STEPControl import STEPControl_AsIs
 
-from lib import tempfile_
-from lib.subshapes import subshapes
-from std_events import document_modified
+from ..lib import tempfile_
+from ..lib.subshapes import subshapes
+from ..std_events import document_modified
 
 
 class ShapeToolCtrl(object):
@@ -103,7 +103,7 @@ class DocCtrl(object):
             #   containing the others will be loaded.
             for compound in subshapes(comp, TopAbs.TopAbs_COMPOUND):
                 for shape in subshapes(compound, TopAbs.TopAbs_SOLID):
-                    from lib import copy_geom
+                    from ..lib import copy_geom
                     # FIXME: This is a very ugly workaround, get rid of it:
                     #    Each shape is copied before adding it to the document
                     #    Otherwise the method get_comp_label would not find

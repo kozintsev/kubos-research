@@ -2,10 +2,10 @@ from __future__ import absolute_import,division,print_function,unicode_literals
 
 from PyQt4.QtGui import QKeySequence
 
-from lib.action import Action
-import std_events
-from gui import viewer_3d
-from doc import doc_ctrl
+from ..lib.action import Action
+from .. import std_events
+from ..gui import viewer_3d
+from ..doc import doc_ctrl
 
 
 def undo_():

@@ -1,10 +1,11 @@
 from __future__ import absolute_import,division,print_function,unicode_literals
 
 from functools import partial
+from functools import partial
 
-from lib.action import Action
+from ..lib.action import Action
 
-from app import app
+from ..app import app
 
 
 toolbar_visible = True

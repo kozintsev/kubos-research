@@ -7,11 +7,11 @@ import subprocess
 from PyQt4 import QtGui
 from PyQt4.QtGui import QMessageBox
 
-from lib.action import Action
-import std_events
-from data import appdata
-from gui import win
-from doc import doc_ctrl
+from ..lib.action import Action
+from .. import std_events
+from ..data import appdata
+from ..gui import win
+from ..doc import doc_ctrl
 
 
 def new_():

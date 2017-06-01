@@ -1,7 +1,7 @@
 from __future__ import absolute_import,division,print_function,unicode_literals
 
-from lib.action import Action
-from gui import viewer_3d
+from ..lib.action import Action
+from ..gui import viewer_3d
 
 
 def wireframe_():

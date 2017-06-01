@@ -3,10 +3,10 @@ from __future__ import absolute_import,division,print_function,unicode_literals
 from PyQt4 import QtGui
 from PyQt4.QtCore import Qt, QSize
 
-from lib import gp_
-import std_events
-from data import appdata
-import active_tool
+from ..lib import gp_
+from .. import std_events
+from ..data import appdata
+from .. import active_tool
 
 
 class CommandDockWidget(QtGui.QDockWidget):

@@ -4,7 +4,7 @@ from OCC.gp import gp_Pnt
 from OCC import TopoDS
 from OCC.BRep import BRep_Tool
 
-from lib.vec import vec
+from ..lib.vec import vec
 
 class point(object):
     def __init__(self, pnt):

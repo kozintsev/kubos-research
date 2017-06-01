@@ -3,10 +3,10 @@ from __future__ import absolute_import,division,print_function,unicode_literals
 from PyQt4 import QtCore
 from OCC import TopAbs
 
-from lib import boolean
-from tools.tool import Tool
+from ..lib import boolean
+from .tool import Tool
 
-from exceptions_ import InvalidInputException, ConstructionError
+from ..exceptions_ import InvalidInputException, ConstructionError
 
 
 class Intersection(Tool):

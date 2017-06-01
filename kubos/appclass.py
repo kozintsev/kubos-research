@@ -41,17 +41,17 @@ class KubosApp(_CadAppQt):
         _appdata.set('AUTHORS', 'Marko Knöbl')
         _appdata.set('VERSION', '0.2b1')
 
-        from doc import doc_ctrl
+        from .doc import doc_ctrl
         self.doc = doc_ctrl
         # 'win' cannot be imported before creating a QApplication
-        from gui import win
+        from .gui import win
         self.win = win
         self.update_title()
         self.viewer = win.viewer_3d
 
     def run(self):
 
-        import std_events
+        from . import std_events
 
         self._menu_bar = self.win.menuBar()
         self._menus = {}
@@ -76,7 +76,7 @@ class KubosApp(_CadAppQt):
         std_events.new_step_activated.connect(self.update_status)
 
         if _appdata.get('mode') == 'script' and _appdata.get('filename'):
-            from actions import script
+            from .actions import script
             script.load(_appdata.get('filename'))
         elif _appdata.get('filename'):
             self.doc.open(_appdata.get('filename'))
@@ -122,7 +122,7 @@ class KubosApp(_CadAppQt):
 
     def update_status(self):
         """Update the text in the status bar"""
-        import active_tool
+        from . import active_tool
         if _appdata.get('mode') not in ['standard', 'test']:
             return
         name = active_tool.active_tool.menu[-1].replace('&', '')
@@ -131,6 +131,6 @@ class KubosApp(_CadAppQt):
         self._message_area.show_message(message)
 
     def show_statusbar(self):
-        from lib.message_area import MessageArea
+        from .lib.message_area import MessageArea
         self._message_area = MessageArea()
         self.win.statusBar().addWidget(self._message_area)

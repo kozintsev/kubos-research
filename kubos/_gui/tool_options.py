@@ -3,9 +3,9 @@ from __future__ import absolute_import,division,print_function,unicode_literals
 from PyQt4 import QtGui, QtCore
 from PyQt4.QtCore import Qt
 
-from data import appdata
-from std_events import new_tool_activated
-import active_tool
+from ..data import appdata
+from ..std_events import new_tool_activated
+from .. import active_tool
 
 
 class ToolOptionsDock(QtGui.QDockWidget):

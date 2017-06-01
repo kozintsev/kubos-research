@@ -1,10 +1,10 @@
 from __future__ import absolute_import,division,print_function,unicode_literals
 
-from tools.tool import Tool
-from lib.boolean import intersection
-from lib.vec import vec
-from lib.subshapes import subshapes
-from lib.gp_ import gp_Pnt_
+from .tool import Tool
+from ..lib.boolean import intersection
+from ..lib.vec import vec
+from ..lib.subshapes import subshapes
+from ..lib.gp_ import gp_Pnt_
 from OCC.TopAbs import TopAbs_EDGE, TopAbs_VERTEX
 from OCC import gp, BRepPrimAPI
 

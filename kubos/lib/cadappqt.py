@@ -7,10 +7,11 @@ try:
                 'QTime', 'QUrl']:
         setapi(api, 2)
 except ValueError:
-    raise StandardError("Kubos or the Kubos library can only be used with "+
+    print("Kubos or the Kubos library can only be used with "+
                         "version 2 of the PyQt API. Use 'sip.setapi' to "+
                         "change the API before importing from PyQt or import "+
                         "CadAppQt before importing anything from PyQt")
+    raise
 
 
 import sys
@@ -18,7 +19,7 @@ try:
     import importlib as _importlib
 except ImportError:
     # for Python 2.6
-    from lib import importlib as _importlib
+    from ..lib import importlib as _importlib
 
 from PyQt4.QtGui import QApplication as _QApplication
 from PyQt4 import QtCore as _QtCore

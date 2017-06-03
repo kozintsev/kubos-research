@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created using Karbon, part of Calligra: http://www.calligra.org/karbon -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="51.2pt"
+   height="51.2pt"
+   id="svg3143"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="boolean-union_.svg">
+  <metadata
+     id="metadata3156">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="709"
+     id="namedview3154"
+     showgrid="false"
+     inkscape:zoom="8.234375"
+     inkscape:cx="25.644529"
+     inkscape:cy="32"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs3145">
+    <radialGradient
+       id="gradient0"
+       gradientTransform="matrix(0.602846 1.04716 -1.9794 1.13953 60.865 -78.3319)"
+       gradientUnits="objectBoundingBox"
+       cx="0.90447386784"
+       cy="0.53954024525"
+       fx="0.90447386784"
+       fy="0.53954024525"
+       r="0.24205455389"
+       spreadMethod="pad">
+      <stop
+         stop-color="#71b2f8"
+         offset="0.00000000000"
+         stop-opacity="1.00000000000"
+         id="stop3148" />
+      <stop
+         stop-color="#002795"
+         offset="1.00000000000"
+         stop-opacity="1.00000000000"
+         id="stop3150" />
+    </radialGradient>
+  </defs>
+  <g
+     id="layer1">
+    <path
+       id="path3570"
+       stroke-miterlimit="4.00000000000"
+       d="M38 0C28.6835 0 20.9788 6.80914 19.5312 15.7188C8.63215 16.4676 4e-06 25.5368 0 36.625C0 48.2029 9.39089 57.5938 20.9688 57.5938C32.4019 57.5938 41.7066 48.4407 41.9375 37.0625C50.3984 35.2545 56.75 27.7167 56.75 18.7188C56.75 8.37258 48.3462 0 38 0Z"
+       stroke-linejoin="miter"
+       stroke-linecap="butt"
+       stroke-width="2.20000005000"
+       stroke="#000137"
+       fill-rule="evenodd"
+       fill="url(#gradient0)"
+       transform="translate(3.44318, 3.38494)" />
+  </g>
+</svg>

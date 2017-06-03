@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 from os import path as _path
-import data
+from data import appdata
 from lib.cadappqt import CadAppQt
 from doc import doc_ctrl
 
@@ -18,23 +18,23 @@ class KubosApp(CadAppQt):
         CadAppQt.__init__(self)
 
         # set application directory
-        data.appdata.set('APPDIR', appdir)
+        appdata.set('APPDIR', appdir)
 
         # Search for icons in './icons/kubos'.
-        if data.appdata.get('APPDIR') is not None:
-            ip = _QIcon.themeSearchPaths() + [_path.join(data.appdata.get('APPDIR'), 'icons')]
+        if appdata.get('APPDIR') is not None:
+            ip = _QIcon.themeSearchPaths() + [_path.join(appdata.get('APPDIR'), 'icons')]
             _QIcon.setThemeSearchPaths(ip)
             _QIcon.setThemeName('kubos')
-        if data.appdata.get('mode'):
-            if _QIcon.hasThemeIcon('kubos-' + data.appdata.get('mode')):
-                data.appdata.set('icon', _QIcon.fromTheme('kubos-' + data.appdata.get('mode')))
+        if appdata.get('mode'):
+            if _QIcon.hasThemeIcon('kubos-' + appdata.get('mode')):
+                appdata.set('icon', _QIcon.fromTheme('kubos-' + appdata.get('mode')))
             else:
-                data.appdata.set('icon', _QIcon.fromTheme('kubos'))
+                appdata.set('icon', _QIcon.fromTheme('kubos'))
         else:
-            data.appdata.set('icon', _QIcon.fromTheme('kubos'))
+            appdata.set('icon', _QIcon.fromTheme('kubos'))
 
-        data.appdata.set('AUTHORS', 'Marko Knöbl')
-        data.appdata.set('VERSION', '0.2b1')
+        appdata.set('AUTHORS', 'Marko Knöbl')
+        appdata.set('VERSION', '0.2b1')
         self.doc = doc_ctrl
         # 'win' cannot be imported before creating a QApplication
         from gui import win
@@ -56,10 +56,10 @@ class KubosApp(CadAppQt):
         # the window is being shown
         self.win.viewer_3d.init2()
 
-        if data.appdata.get('mode') != 'script':
+        if appdata.get('mode') != 'script':
             self.win.viewer_3d.grid = True
 
-        if data.appdata.get('mode') in ['test', 'standard']:
+        if appdata.get('mode') in ['test', 'standard']:
             self.show_statusbar()
 
         std_events.filename_changed.connect(self.update_title)
@@ -67,14 +67,14 @@ class KubosApp(CadAppQt):
 
         std_events.new_step_activated.connect(self.update_status)
 
-        if data.appdata.get('mode') == 'script' and data.appdata.get('filename'):
+        if appdata.get('mode') == 'script' and appdata.get('filename'):
             from actions import script
-            script.load(data.appdata.get('filename'))
-        elif data.appdata.get('filename'):
-            self.doc.open(data.appdata.get('filename'))
+            script.load(appdata.get('filename'))
+        elif appdata.get('filename'):
+            self.doc.open(appdata.get('filename'))
             std_events.document_modified.emit()
 
-        if data.appdata.get('mode') in ['standard', 'test']:
+        if appdata.get('mode') in ['standard', 'test']:
             self.load_actions('actions.file')
             self.load_actions('actions.edit')
             self.load_tools('tools.select')
@@ -88,34 +88,34 @@ class KubosApp(CadAppQt):
             self.load_actions('actions.help')
             self.load_tools('tools.bezier')
             self.load_tools('tools.roof')
-            if data.appdata.get('mode') == 'test':
+            if appdata.get('mode') == 'test':
                 self.load_actions('actions.module')
                 self.load_actions('actions.test')
                 self.load_tools('tools.test')
                 self.load_actions('actions.unit_test')
                 self.load_actions('actions.my_actions')
-        elif data.appdata.get('mode') == 'viewer':
+        elif appdata.get('mode') == 'viewer':
             self.load_actions('actions.file')
             self.load_actions('actions.view')
             self.load_actions('actions.module')
-        elif data.appdata.get('mode') == 'minimal':
+        elif appdata.get('mode') == 'minimal':
             self.load_actions('actions.module')
-        elif data.appdata.get('mode') == 'script':
+        elif appdata.get('mode') == 'script':
             self.load_actions('actions.script')
             self.load_actions('actions.view')
             self.load_actions('actions.help')
 
     def update_title(self):
         """Update the window title"""
-        dirty_marker = '*' if data.appdata.get('dirty') else ''
-        filename = _path.basename(data.appdata.get('filename')) or 'Unnamed'
+        dirty_marker = '*' if appdata.get('dirty') else ''
+        filename = _path.basename(appdata.get('filename')) or 'Unnamed'
         self.win.setWindowTitle('{0}{1} - {2}'.format(
-            filename, dirty_marker, data.appdata.get('APPLICATION_NAME')))
+            filename, dirty_marker, appdata.get('APPLICATION_NAME')))
 
     def update_status(self):
         """Update the text in the status bar"""
         import active_tool
-        if data.appdata.get('mode') not in ['standard', 'test']:
+        if appdata.get('mode') not in ['standard', 'test']:
             return
         name = active_tool.active_tool.menu[-1].replace('&', '')
         help = active_tool.active_tool.help[active_tool.active_tool.step]

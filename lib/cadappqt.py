@@ -1,5 +1,3 @@
-
-
 # set the PyQt APIs to version 2 (this must be done before
 from sip import setapi
 try:
@@ -15,11 +13,7 @@ except ValueError:
 
 
 import sys
-try:
-    import importlib as _importlib
-except ImportError:
-    # for Python 2.6
-    from lib import importlib as _importlib
+from lib import importlib as _importlib
 
 from PyQt4.QtGui import QApplication
 from PyQt4 import QtCore
@@ -32,6 +26,7 @@ class CadAppQt(object):
     """
 
     def __init__(self):
+        super(CadAppQt, self).__init__()
         self._qapp = QApplication(sys.argv)
         # Initializing a QApplication changes the system locale for
         # the running program - resetting to default ('C')

@@ -18,7 +18,7 @@ appdata.set('filename', args.URL)
 if appdata.get('mode') == 'standard':
     appdata.set('APPLICATION_NAME', 'Kubos')
 else:
-    appdata.set('APPLICATION_NAME', 'Kubos '+data.appdata.get('mode').title())
+    appdata.set('APPLICATION_NAME', 'Kubos '+appdata.get('mode').title())
 
 
 app.exec_()

@@ -1,2 +1,2 @@
 cd ..\kubos
-start "" "c:\python26\pythonw" ".\__main__.pyw" "--mode" "script"
+start "" "c:\Anaconda3\python.exe" ".\__main__.pyw" "--mode" "script"

@@ -1,4 +1,4 @@
-from __future__ import absolute_import,division,print_function,unicode_literals
+
 
 import imp
 
@@ -54,7 +54,7 @@ select_shape = Action(select_shape_action, ('Te&sts', 'Select &Shape'))
 
 
 def list_data_():
-    for key, value in appdata.__dict__.iteritems():
+    for key, value in appdata.__dict__.items():
         if not key.startswith('__'):
             print(key, ':\n    ', value)
 list_data = Action(list_data_, ('Te&sts', 'List &Data'))

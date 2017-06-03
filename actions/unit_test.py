@@ -1,7 +1,7 @@
 """These tests are used to check functionality.  They were written for KDE4 and
 a window size of 900x600 and might not work on other configurations"""
 
-from __future__ import absolute_import,division,print_function,unicode_literals
+
 
 from PyQt4.QtTest import QTest
 from PyQt4.QtCore import Qt

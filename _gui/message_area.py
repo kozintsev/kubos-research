@@ -1,4 +1,4 @@
-from __future__ import absolute_import,division,print_function,unicode_literals
+
 
 from lib.message_area import MessageArea as MessageArea_
 from std_events import invalid_input_accepted

@@ -1,4 +1,4 @@
-from __future__ import absolute_import,division,print_function,unicode_literals
+
 
 try:
     from collections import OrderedDict
@@ -182,7 +182,7 @@ class DocCtrl(object):
 
     def clear(self):
         """Remove all shapes from the document"""
-        for comp in self._label_dict.values():
+        for comp in list(self._label_dict.values()):
             self._shape_tool.RemoveComponent(comp)
         self._label_dict.clear()
         document_modified.emit()

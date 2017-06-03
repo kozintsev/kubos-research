@@ -1,4 +1,4 @@
-from __future__ import absolute_import,division,print_function,unicode_literals
+
 
 from PyQt4.QtGui import QAction
 from PyQt4.QtGui import QIcon

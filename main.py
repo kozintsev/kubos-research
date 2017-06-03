@@ -1,23 +1,18 @@
-#!/usr/bin/python2
 # -*- coding: UTF-8 -*-
 
-# should work with Python 2.6 and 2.7, pythonOCC >= 0.5
-# tested with:
-#   Ubuntu, Python 2.7, pythonOCC 0.6 alpha
-#   Windows, Python 2.6, pythonOCC 0.5
-#   Debian 6, Python 2.6
-#   Debian 7, Python 2.7, pythonOCC 0.6 alpha
+#convert to Python 3
 
 # TODO: check occurences of document_modified.emit(), reduce them
 
-from data import appdata
-from app import app
+import data
+from data import *
+from app import *
 
 
 try:
     import argparse
 except ImportError:
-    from lib import argparse
+    from .lib import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument(
     '--mode', choices=['standard', 'minimal', 'viewer', 'test', 'script'],
@@ -26,10 +21,10 @@ parser.add_argument('URL', nargs='?', default='', help='Document to open')
 args = parser.parse_args()
 appdata.set('mode', args.mode or 'standard')
 appdata.set('filename', args.URL)
-if appdata.get('mode') == 'standard':
+if data.appdata.get('mode') == 'standard':
     appdata.set('APPLICATION_NAME', 'Kubos')
 else:
-    appdata.set('APPLICATION_NAME', 'Kubos '+appdata.get('mode').title())
+    appdata.set('APPLICATION_NAME', 'Kubos '+data.appdata.get('mode').title())
 
 
 app.exec_()

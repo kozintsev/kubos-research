@@ -1,6 +1,6 @@
 # This module can be used to add custom actions to Kubos
 
-from __future__ import absolute_import,division,print_function,unicode_literals
+
 
 from lib.action import Action
 

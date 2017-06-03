@@ -1,10 +1,10 @@
-from __future__ import absolute_import,division,print_function,unicode_literals
+
 
 import imp
 import sys
 from os import path
 import subprocess
-import __builtin__
+import builtins
 
 from PyQt4 import QtGui
 
@@ -55,11 +55,11 @@ def exec_script():
             module = imp.load_source('script', filename)
         else:
             module.__dict__.clear()
-            for (key, value) in {'__builtins__':__builtin__.__dict__,
+            for (key, value) in list({'__builtins__':builtins.__dict__,
                                  '__doc__':None,
                                  '__file__':None,
                                  '__name__':'script',
-                                 '__package__':None}.items():
+                                 '__package__':None}.items()):
                 module.__dict__[key] = value
         module = imp.load_source('script', filename)
         try:

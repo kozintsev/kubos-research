@@ -1,9 +1,9 @@
-from __future__ import absolute_import,division,print_function,unicode_literals
+
 
 from PyQt4 import QtGui
 
 import std_events
-import doc
+# import doc
 from lib.label_util import tag_list
 
 import gui
@@ -52,15 +52,15 @@ class ObjectDetailsDock(QtGui.QDockWidget):
 
     def on_selection_changed(self):
         selection = gui.viewer_3d._selection
-        self.lbl = doc.doc_ctrl.get_shape_label(selection)
-        lbl_ = doc.doc_ctrl.get_comp_label(selection)
+        # self.lbl = doc.doc_ctrl.get_shape_label(selection)
+        # lbl_ = doc.doc_ctrl.get_comp_label(selection)
         self.tag_label.setText('Tag:\n' + str(tag_list(self.lbl)) +
                                '\n' + str(tag_list(lbl_)))
 
     def set_color(self, color):
         """Set the color of the selected shape"""
-        with doc.doc_ctrl.open_command():
-            doc.doc_ctrl.set_color(self.lbl, color)
+        #with doc.doc_ctrl.open_command():
+        #    doc.doc_ctrl.set_color(self.lbl, color)
         std_events.document_modified.emit()
 
     def on_red(self):

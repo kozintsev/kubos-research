@@ -1,4 +1,4 @@
-from __future__ import absolute_import,division,print_function,unicode_literals
+
 
 from lib.doc_ctrl import DocCtrl
 
@@ -23,14 +23,14 @@ class KubosDoc(DocCtrl):
     def remove_random(self):
         """Remove a random shape from the document (for testing)"""
         import random
-        label = random.choice(self._label_dict.values())
+        label = random.choice(list(self._label_dict.values()))
 
         with self.open_command():
             self._shape_tool.RemoveComponent(label)
         std_events.document_modified.emit()
 
     def select_by_number(self, number):
-        a = self._label_dict.values()
+        a = list(self._label_dict.values())
         label = a[number % len(a)]
         if self._selection:
             self.set_color(self._selection, [0, 0, 1])

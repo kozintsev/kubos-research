@@ -1,4 +1,4 @@
-from __future__ import absolute_import,division,print_function,unicode_literals
+
 
 from OCC import BRepAlgoAPI, BRepAlgo, TopoDS, TopAbs
 from OCC.BRep import BRep_Tool

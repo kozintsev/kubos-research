@@ -1,11 +1,11 @@
-from __future__ import absolute_import,division,print_function,unicode_literals
+
 
 from PyQt4 import QtCore, QtGui
 
 import tools
 import active_tool
 from data import appdata
-from doc import doc_ctrl
+# from doc import doc_ctrl
 from _gui.command import CommandDockWidget
 from _gui.object_details import ObjectDetailsDock
 from _gui.viewer import KubosViewer

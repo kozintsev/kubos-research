@@ -2,7 +2,7 @@
 # most of this file was copied from the standard library of Python 3.2
 #
 
-from __future__ import absolute_import, print_function
+
 
 import os as _os
 import sys as _sys

@@ -1,6 +1,3 @@
-from __future__ import (absolute_import as _, division as _,
-                        print_function as _, unicode_literals as _)
-
 import sys
 from os import path
 # add the package directory to sys.path

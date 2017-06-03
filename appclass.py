@@ -2,6 +2,7 @@
 from os import path as _path
 import data
 from lib.cadappqt import CadAppQt
+from doc import doc_ctrl
 
 from PyQt4.QtGui import QIcon as _QIcon
 
@@ -34,24 +35,21 @@ class KubosApp(CadAppQt):
 
         data.appdata.set('AUTHORS', 'Marko Knöbl')
         data.appdata.set('VERSION', '0.2b1')
-        # todo: off doс control
-        #import doc.doc_ctrl
-        #self.doc = doc.doc_ctrl
+        self.doc = doc_ctrl
         # 'win' cannot be imported before creating a QApplication
         from gui import win
         self.win = win
         self.update_title()
         self.viewer = win.viewer_3d
-
-    def run(self):
-
-        import std_events
-
         self._menu_bar = self.win.menuBar()
         self._menus = {}
         self._actiongroups = {}
 
         self._toolbars = {}
+
+    def run(self):
+
+        import std_events
 
         self.win.showMaximized()
         # second initialization step for the viewer - must be called once
@@ -70,7 +68,7 @@ class KubosApp(CadAppQt):
         std_events.new_step_activated.connect(self.update_status)
 
         if data.appdata.get('mode') == 'script' and data.appdata.get('filename'):
-            from .actions import script
+            from actions import script
             script.load(data.appdata.get('filename'))
         elif data.appdata.get('filename'):
             self.doc.open(data.appdata.get('filename'))
@@ -116,7 +114,7 @@ class KubosApp(CadAppQt):
 
     def update_status(self):
         """Update the text in the status bar"""
-        from . import active_tool
+        import active_tool
         if data.appdata.get('mode') not in ['standard', 'test']:
             return
         name = active_tool.active_tool.menu[-1].replace('&', '')
@@ -125,6 +123,6 @@ class KubosApp(CadAppQt):
         self._message_area.show_message(message)
 
     def show_statusbar(self):
-        from .lib.message_area import MessageArea
+        from lib.message_area import MessageArea
         self._message_area = MessageArea()
         self.win.statusBar().addWidget(self._message_area)

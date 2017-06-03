@@ -1,5 +1,3 @@
-
-
 from PyQt4 import QtGui
 
 import std_events

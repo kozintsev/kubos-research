@@ -46,25 +46,7 @@ class KubosDoc(DocCtrl):
 
     def on_input_accepted(self):
         """Handle the "input_accepted" event"""
-        from gui import tool_options_dock
-        if not appdata.get('input_valid'):
-            std_events.invalid_input_accepted.emit()
-            return
-        # Check if this is the last step
-        if active_tool.active_tool.step + 1 < active_tool.active_tool.steps:
-            std_events.step_finished.emit()
-        else:
-            # Get the final shapes and add them to the document
-            shapes = active_tool.active_tool.final()
-            with self.open_command():
-                for shape in shapes:
-                    self.add(shape)
-                if tool_options_dock.copy_checkbox.checkState()==Qt.Unchecked:
-                    for shape in active_tool.active_tool.remove:
-                        self.remove(shape)
-            std_events.document_modified.emit()
-            active_tool.active_tool.reset()
-            std_events.construction_finished.emit()
+        pass
 
 # some features are not needed for the script mode (e.g. interactive input)
 #  - use the simpler DocCtrl in that case

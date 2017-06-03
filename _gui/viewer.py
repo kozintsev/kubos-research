@@ -80,51 +80,6 @@ class KubosViewer(Viewer):
         # TODO: 0.3: Detected shape should be highlighted
         pos = self.mapFromGlobal(QtGui.QCursor.pos())
         pos = [pos.x(), pos.y()]
-        if active_tool.active_tool.input_type == 'object':
-            # TODO: Currently the preview is always removed and redisplayed
-            # on every input change in order to avoid it being selected.
-            # Make it unselectable.
-            self.replace_shapes('preview', [])
-            # HACK
-            # iterate over all possible object types and try to select one
-            #   of them:
-            for selection_mode in [TopAbs.TopAbs_SOLID, TopAbs.TopAbs_SHELL,
-                                   TopAbs.TopAbs_FACE, TopAbs.TopAbs_WIRE,
-                                   TopAbs.TopAbs_EDGE, TopAbs.TopAbs_VERTEX]:
-                self.context.CloseLocalContext()
-                self.context.OpenLocalContext()
-                self.context.ActivateStandardMode(selection_mode)
-                self.context.MoveTo(pos[0], pos[1], self.view.GetHandle())
-                if sys.platform.startswith('win'):
-                    self.context.MoveTo(pos[0], pos[1], self.view.GetHandle())
-                if self.context.HasDetected():
-                    appdata.set('input', self.context.DetectedShape())
-                    break
-            else:
-                appdata.set('input', None)
-        else:
-            self.context.CloseLocalContext()
-            self.context.OpenLocalContext()
-            self.context.ActivateStandardMode(TopAbs.TopAbs_VERTEX)
-            self.context.MoveTo(pos[0], pos[1], self.view.GetHandle())
-            if sys.platform.startswith('win'):
-                # WORKAROUND: call this twice on Windows
-                self.context.MoveTo(pos[0], pos[1], self.view.GetHandle())
-
-            if self.context.HasDetected():
-                a = gp_Pnt_(self.context.DetectedShape())
-            elif not self.grid:
-                view_point = self.view.ConvertToGrid(*pos)
-                view_direction = [self.view.At()[i] - self.view.Eye()[i]
-                                  for i in range(3)]
-                active_direction = self.active_plane
-                point = [view_point[i] - view_point[active_direction] *
-                         view_direction[i]/view_direction[active_direction]
-                         for i in range(3)]
-                a = gp_Pnt_(point)
-            else:
-                a = gp_Pnt_(self.view.ConvertToGrid(*pos))
-            appdata.set('input', a)
 
     def mousePressEvent(self, event):
         pos = [event.x(), event.y()]

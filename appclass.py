@@ -9,7 +9,7 @@ from PyQt4.QtGui import QIcon as _QIcon
 
 class KubosApp(CadAppQt):
     def __init__(self, *args, **kwargs):
-
+        #super(KubosApp).__init__(level=NOTSET)
         try:
             appdir = kwargs.pop('appdir')
         except KeyError:
@@ -56,23 +56,23 @@ class KubosApp(CadAppQt):
         # the window is being shown
         self.win.viewer_3d.init2()
 
-        if appdata.get('mode') != 'script':
-            self.win.viewer_3d.grid = True
+        #if appdata.get('mode') != 'script':
+        #    self.win.viewer_3d.grid = True
 
         if appdata.get('mode') in ['test', 'standard']:
             self.show_statusbar()
 
-        std_events.filename_changed.connect(self.update_title)
-        std_events.dirty_changed.connect(self.update_title)
+        #std_events.filename_changed.connect(self.update_title)
+        #std_events.dirty_changed.connect(self.update_title)
 
-        std_events.new_step_activated.connect(self.update_status)
+        #std_events.new_step_activated.connect(self.update_status)
 
-        if appdata.get('mode') == 'script' and appdata.get('filename'):
-            from actions import script
-            script.load(appdata.get('filename'))
-        elif appdata.get('filename'):
-            self.doc.open(appdata.get('filename'))
-            std_events.document_modified.emit()
+        #if appdata.get('mode') == 'script' and appdata.get('filename'):
+        #    from actions import script
+        #    script.load(appdata.get('filename'))
+        #elif appdata.get('filename'):
+        #    self.doc.open(appdata.get('filename'))
+        #    std_events.document_modified.emit()
 
         if appdata.get('mode') in ['standard', 'test']:
             self.load_actions('actions.file')

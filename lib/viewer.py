@@ -18,6 +18,8 @@ from OCC.TopoDS import TopoDS_Shape
 
 from lib.vec import vec
 
+
+
 if sys.platform != 'win32' and not 'CSF_GraphicShr' in os.environ:
     # Taken from OCC.Display.OCCViewer
     os.environ['CSF_GraphicShr'] = ctypes.util.find_library('TKOpenGl')
@@ -46,6 +48,7 @@ class Viewer(QtGui.QWidget):
         self._display = Display3d()
         # TODO: on Linux, self.winId returns a 'long' - if this is similar on
         # other platforms, conversion to int may not be neccessary
+        idd = int(self.winId())
         self._display.Init(int(self.winId()))
         # types: AIS_InteractiveContext, V3d_View, V3d_Viewer
         self.context = self._display.GetContext().GetObject()
@@ -143,7 +146,7 @@ class Viewer(QtGui.QWidget):
     def repaint1(self):
         """Recompute the visualization of all displayed shapes which are not
         part of the document (e.g. the preview)"""
-        self.view.Redraw()
+        # self.view.Redraw()
 
     def add_light(self, light):
         """Adds a light to the viewer. Does nothing if the light is already

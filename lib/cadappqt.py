@@ -26,7 +26,7 @@ class CadAppQt(object):
     """
 
     def __init__(self):
-        super(CadAppQt, self).__init__()
+        #super(CadAppQt, self).__init__()
         self._qapp = QApplication(sys.argv)
         # Initializing a QApplication changes the system locale for
         # the running program - resetting to default ('C')

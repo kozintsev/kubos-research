@@ -21,9 +21,9 @@ except ImportError:
     # for Python 2.6
     from lib import importlib as _importlib
 
-from PyQt4.QtGui import QApplication as _QApplication
-from PyQt4 import QtCore as _QtCore
-from PyQt4.QtGui import QActionGroup as _QActionGroup
+from PyQt4.QtGui import QApplication
+from PyQt4 import QtCore
+from PyQt4.QtGui import QActionGroup
 
 class CadAppQt(object):
     """Base class for CAD applications using the Qt framework.
@@ -32,13 +32,13 @@ class CadAppQt(object):
     """
 
     def __init__(self):
-        self._qapp = _QApplication(sys.argv)
+        self._qapp = QApplication(sys.argv)
         # Initializing a QApplication changes the system locale for
         # the running program - resetting to default ('C')
         from locale import setlocale, LC_ALL
         setlocale(LC_ALL, 'C')
 
-    def load_action(self, action, toolbar_area=_QtCore.Qt.TopToolBarArea,
+    def load_action(self, action, toolbar_area=QtCore.Qt.TopToolBarArea,
                     toolbar_visible=True):
         category = action.category
         if category not in self._menus:
@@ -51,7 +51,7 @@ class CadAppQt(object):
         group = action.group
         if group is not None:
             if group not in self._actiongroups:
-                self._actiongroups[group] = _QActionGroup(self.win)
+                self._actiongroups[group] = QActionGroup(self.win)
             self._actiongroups[group].addAction(action)
 
     def add_action(self, *args, **kwargs):
@@ -76,7 +76,7 @@ class CadAppQt(object):
         try:
             toolbar_area = module.toolbar_area
         except AttributeError:
-            toolbar_area = _QtCore.Qt.TopToolBarArea
+            toolbar_area = QtCore.Qt.TopToolBarArea
         try:
             toolbar_visible = module.toolbar_visible
         except AttributeError:
@@ -90,7 +90,7 @@ class CadAppQt(object):
         """
         module = _importlib.import_module(name)
         for tool in module.list:
-            self.load_action(tool.action, _QtCore.Qt.LeftToolBarArea,
+            self.load_action(tool.action, QtCore.Qt.LeftToolBarArea,
                              module.toolbar_visible)
 
 

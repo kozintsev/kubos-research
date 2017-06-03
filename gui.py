@@ -1,9 +1,7 @@
-
-
 from data import appdata
-import _gui.main_win
+from _gui.main_win import MainWindow
 
-win = _gui.main_win.MainWindow()
+win = MainWindow()
 viewer_3d = win.viewer_3d
 if appdata.get('mode') in ['standard', 'test']:
     command_dock_widget = win.command_dock_widget

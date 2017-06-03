@@ -2,168 +2,147 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8981533b-43b7-4bed-aaaa-2fd2baa11225" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MANIFEST.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/run_kubos_linux.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/run_kubos_script_linux.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/run_kubos_script_windows.bat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/run_kubos_test_linux.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/run_kubos_test_windows.bat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/run_kubos_windows.bat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/copyright" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/kubos_script/1_cuboid.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/kubos_script/2_primitives.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/kubos_script/3_transformations.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/kubos_script/4_actions.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/kubos_script/5_view_control.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/kubos_script/6_openscad_1.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/kubos_script/7_openscad_6/7_openscad_6.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/kubos_script/7_openscad_6/rbox.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/kubos_script/future_ideas.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/__main__.pyw" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/_gui/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/_gui/command.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/_gui/main_win.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/_gui/message_area.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/_gui/object_details.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/_gui/text_edit.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/_gui/tool_options.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/_gui/viewer.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/actions/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/actions/edit.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/actions/file.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/actions/help.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/actions/module.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/actions/my_actions.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/actions/option.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/actions/script.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/actions/test.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/actions/unit_test.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/actions/view.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/active_tool.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/app.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/appclass.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/data.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/doc.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/exceptions_.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/gui.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/fallback/16x16/actions/application-exit.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/fallback/16x16/actions/document-export.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/fallback/16x16/actions/document-new.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/fallback/16x16/actions/document-open.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/fallback/16x16/actions/document-save-as.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/fallback/16x16/actions/document-save.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/fallback/16x16/actions/edit-delete.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/fallback/16x16/actions/edit-redo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/fallback/16x16/actions/edit-select.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/fallback/16x16/actions/edit-undo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/fallback/16x16/actions/help-about.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/fallback/16x16/actions/help-contextual.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/fallback/16x16/actions/view-grid.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/fallback/22x22/actions/application-exit.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/fallback/22x22/actions/document-export.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/fallback/22x22/actions/document-new.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/fallback/22x22/actions/document-open.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/fallback/22x22/actions/document-save-as.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/fallback/22x22/actions/document-save.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/fallback/22x22/actions/edit-delete.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/fallback/22x22/actions/edit-fill.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/fallback/22x22/actions/edit-redo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/fallback/22x22/actions/edit-select.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/fallback/22x22/actions/edit-undo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/fallback/22x22/actions/help-about.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/fallback/22x22/actions/help-contextual.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/fallback/22x22/actions/view-grid.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/fallback/22x22/actions/view-refresh.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/fallback/index.theme" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/128x128/applications/kubos.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/16x16/applications/kubos.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/22x22/actions/cad-rectangle_.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/22x22/actions/cad-rectangle__s.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/24x24/actions/cad-rectangle_.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/32x32/applications/kubos.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/index.theme" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/blue.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/boolean-difference.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/boolean-difference_.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/boolean-difference_1.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/boolean-intersection.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/boolean-intersection_.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/boolean-union.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/boolean-union_.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/cad-active_plane.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/cad-bspline.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/cad-circle.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/cad-cone.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/cad-cube.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/cad-cylinder.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/cad-disk.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/cad-extrude.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/cad-line.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/cad-line_.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/cad-point.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/cad-rectangle.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/cad-rectangle_3.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/cad-regular_polygon.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/cad-revolve.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/cad-roof.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/cad-segment.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/cad-segment_.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/cad-sphere.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/cad-sphere_.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/cad-torus.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/green.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/orange.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/purple.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/red.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/transform-mirror.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/transform-move.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/transform-rotate.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/view-angled.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/view-front.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/view-right.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/view-top.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/view-wireframe.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/actions/yellow.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/applications/kubos-script.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/applications/kubos-script__.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/icons/kubos/scalable/applications/kubos.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/lib/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/lib/action.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/lib/appdata.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/lib/argparse.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/lib/boolean.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/lib/cadappqt.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/lib/copy_geom.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/lib/doc_ctrl.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/lib/event.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/lib/gp_.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/lib/importlib/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/lib/label_util.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/lib/message_area.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/lib/qtest.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/lib/subshapes.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/lib/tempfile_.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/lib/trsf.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/lib/vec.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/lib/viewer.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/lib/wirebuilder.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/main.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/run_std.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/std_events.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/tools/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/tools/bezier.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/tools/boolean.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/tools/delete.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/tools/expand.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/tools/primitives.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/tools/roof.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/tools/select.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/tools/test.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/tools/tool.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kubos/tools/transform.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/setup.py" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/run_kubos_script_windows.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/run_kubos_test_windows.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/run_kubos_windows.bat" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/fallback/16x16/actions/application-exit.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/fallback/16x16/actions/document-export.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/fallback/16x16/actions/document-new.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/fallback/16x16/actions/document-open.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/fallback/16x16/actions/document-save-as.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/fallback/16x16/actions/document-save.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/fallback/16x16/actions/edit-delete.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/fallback/16x16/actions/edit-redo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/fallback/16x16/actions/edit-select.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/fallback/16x16/actions/edit-undo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/fallback/16x16/actions/help-about.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/fallback/16x16/actions/help-contextual.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/fallback/16x16/actions/view-grid.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/fallback/22x22/actions/application-exit.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/fallback/22x22/actions/document-export.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/fallback/22x22/actions/document-new.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/fallback/22x22/actions/document-open.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/fallback/22x22/actions/document-save-as.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/fallback/22x22/actions/document-save.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/fallback/22x22/actions/edit-delete.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/fallback/22x22/actions/edit-fill.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/fallback/22x22/actions/edit-redo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/fallback/22x22/actions/edit-select.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/fallback/22x22/actions/edit-undo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/fallback/22x22/actions/help-about.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/fallback/22x22/actions/help-contextual.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/fallback/22x22/actions/view-grid.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/fallback/22x22/actions/view-refresh.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/fallback/index.theme" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/128x128/applications/kubos.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/16x16/applications/kubos.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/22x22/actions/cad-rectangle_.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/22x22/actions/cad-rectangle__s.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/24x24/actions/cad-rectangle_.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/32x32/applications/kubos.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/index.theme" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/blue.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/boolean-difference.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/boolean-difference_.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/boolean-difference_1.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/boolean-intersection.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/boolean-intersection_.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/boolean-union.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/boolean-union_.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/cad-active_plane.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/cad-bspline.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/cad-circle.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/cad-cone.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/cad-cube.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/cad-cylinder.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/cad-disk.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/cad-extrude.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/cad-line.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/cad-line_.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/cad-point.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/cad-rectangle.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/cad-rectangle_3.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/cad-regular_polygon.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/cad-revolve.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/cad-roof.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/cad-segment.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/cad-segment_.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/cad-sphere.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/cad-sphere_.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/cad-torus.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/green.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/orange.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/purple.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/red.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/transform-mirror.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/transform-move.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/transform-rotate.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/view-angled.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/view-front.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/view-right.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/view-top.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/view-wireframe.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/actions/yellow.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/applications/kubos-script.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/applications/kubos-script__.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icons/kubos/scalable/applications/kubos.svg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/__init__.py" afterPath="$PROJECT_DIR$/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_gui/command.py" afterPath="$PROJECT_DIR$/_gui/command.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_gui/main_win.py" afterPath="$PROJECT_DIR$/_gui/main_win.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_gui/message_area.py" afterPath="$PROJECT_DIR$/_gui/message_area.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_gui/object_details.py" afterPath="$PROJECT_DIR$/_gui/object_details.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_gui/text_edit.py" afterPath="$PROJECT_DIR$/_gui/text_edit.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_gui/tool_options.py" afterPath="$PROJECT_DIR$/_gui/tool_options.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_gui/viewer.py" afterPath="$PROJECT_DIR$/_gui/viewer.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/actions/edit.py" afterPath="$PROJECT_DIR$/actions/edit.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/actions/file.py" afterPath="$PROJECT_DIR$/actions/file.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/actions/help.py" afterPath="$PROJECT_DIR$/actions/help.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/actions/module.py" afterPath="$PROJECT_DIR$/actions/module.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/actions/my_actions.py" afterPath="$PROJECT_DIR$/actions/my_actions.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/actions/option.py" afterPath="$PROJECT_DIR$/actions/option.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/actions/script.py" afterPath="$PROJECT_DIR$/actions/script.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/actions/test.py" afterPath="$PROJECT_DIR$/actions/test.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/actions/unit_test.py" afterPath="$PROJECT_DIR$/actions/unit_test.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/actions/view.py" afterPath="$PROJECT_DIR$/actions/view.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/active_tool.py" afterPath="$PROJECT_DIR$/active_tool.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appclass.py" afterPath="$PROJECT_DIR$/appclass.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data.py" afterPath="$PROJECT_DIR$/data.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc.py" afterPath="$PROJECT_DIR$/doc.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exceptions_.py" afterPath="$PROJECT_DIR$/exceptions_.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gui.py" afterPath="$PROJECT_DIR$/gui.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/action.py" afterPath="$PROJECT_DIR$/lib/action.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/appdata.py" afterPath="$PROJECT_DIR$/lib/appdata.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/argparse.py" afterPath="$PROJECT_DIR$/lib/argparse.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/boolean.py" afterPath="$PROJECT_DIR$/lib/boolean.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/cadappqt.py" afterPath="$PROJECT_DIR$/lib/cadappqt.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/copy_geom.py" afterPath="$PROJECT_DIR$/lib/copy_geom.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/doc_ctrl.py" afterPath="$PROJECT_DIR$/lib/doc_ctrl.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/event.py" afterPath="$PROJECT_DIR$/lib/event.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/gp_.py" afterPath="$PROJECT_DIR$/lib/gp_.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/importlib/__init__.py" afterPath="$PROJECT_DIR$/lib/importlib/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/label_util.py" afterPath="$PROJECT_DIR$/lib/label_util.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/message_area.py" afterPath="$PROJECT_DIR$/lib/message_area.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/qtest.py" afterPath="$PROJECT_DIR$/lib/qtest.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/subshapes.py" afterPath="$PROJECT_DIR$/lib/subshapes.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/tempfile_.py" afterPath="$PROJECT_DIR$/lib/tempfile_.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/trsf.py" afterPath="$PROJECT_DIR$/lib/trsf.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/vec.py" afterPath="$PROJECT_DIR$/lib/vec.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/viewer.py" afterPath="$PROJECT_DIR$/lib/viewer.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/wirebuilder.py" afterPath="$PROJECT_DIR$/lib/wirebuilder.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run_std.py" afterPath="$PROJECT_DIR$/run_std.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/std_events.py" afterPath="$PROJECT_DIR$/std_events.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/bezier.py" afterPath="$PROJECT_DIR$/tools/bezier.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/boolean.py" afterPath="$PROJECT_DIR$/tools/boolean.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/delete.py" afterPath="$PROJECT_DIR$/tools/delete.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/expand.py" afterPath="$PROJECT_DIR$/tools/expand.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/primitives.py" afterPath="$PROJECT_DIR$/tools/primitives.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/roof.py" afterPath="$PROJECT_DIR$/tools/roof.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/select.py" afterPath="$PROJECT_DIR$/tools/select.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/test.py" afterPath="$PROJECT_DIR$/tools/test.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/tool.py" afterPath="$PROJECT_DIR$/tools/tool.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/transform.py" afterPath="$PROJECT_DIR$/tools/transform.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -178,8 +157,8 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="289">
+              <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -188,8 +167,8 @@
       <file leaf-file-name="appclass.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/appclass.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="23" lean-forward="false" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
+            <state relative-caret-position="151">
+              <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding>
                 <element signature="e#24#52#0" expanded="true" />
               </folding>
@@ -197,24 +176,80 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cadappqt.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/cadappqt.py">
+      <file leaf-file-name="gui.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="85">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding>
+                <element signature="e#2#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="doc.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/doc.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="301">
+              <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+              <folding>
+                <element signature="e#2#34#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main_win.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_gui/main_win.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="32" lean-forward="false" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+              <folding>
+                <element signature="e#2#33#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="viewer.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_gui/viewer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1275">
+              <caret line="90" column="69" lean-forward="false" selection-start-line="90" selection-start-column="69" selection-end-line="90" selection-end-column="69" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="doc_ctrl.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/doc_ctrl.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="202">
+              <caret line="52" column="9" lean-forward="true" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
+              <folding>
+                <element signature="e#107#144#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="XCAFApp.py" pinned="false" current-in-tab="true">
+        <entry file="file://C:/Anaconda3/Lib/site-packages/OCC/XCAFApp.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2703">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#337#361#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="17">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -228,6 +263,18 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>_appdata</find>
+      <find>_CadAppQt</find>
+      <find>lib.cadappqt.CadAppQt</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>data.appdata</replace>
+      <replace>lib.cadappqt.CadAppQt</replace>
+      <replace>CadAppQt</replace>
+    </replaceStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -238,12 +285,15 @@
         <option value="$PROJECT_DIR$/kubos/__main__.pyw" />
         <option value="$PROJECT_DIR$/kubos/mymodule.py" />
         <option value="$PROJECT_DIR$/mymodule.py" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/kubos/data.py" />
         <option value="$PROJECT_DIR$/kubos/main.py" />
         <option value="$PROJECT_DIR$/__main__.pyw" />
-        <option value="$PROJECT_DIR$/appclass.py" />
         <option value="$PROJECT_DIR$/lib/cadappqt.py" />
+        <option value="$PROJECT_DIR$/lib/subshapes.py" />
+        <option value="$PROJECT_DIR$/appclass.py" />
+        <option value="$PROJECT_DIR$/_gui/main_win.py" />
+        <option value="$PROJECT_DIR$/_gui/object_details.py" />
+        <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
   </component>
@@ -282,8 +332,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -301,7 +351,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.__main__.pyw (1)">
+  <component name="RunManager" selected="Python.main (1)">
     <configuration default="false" name="__main__.pyw" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -464,9 +514,9 @@
     </list>
     <recent_temporary>
       <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Python.__main__.pyw (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Python.main" />
-        <item index="2" class="java.lang.String" itemvalue="Python.main (1)" />
+        <item index="0" class="java.lang.String" itemvalue="Python.main (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Python.__main__.pyw (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Python.main" />
         <item index="3" class="java.lang.String" itemvalue="Python.__main__.pyw" />
       </list>
     </recent_temporary>
@@ -491,13 +541,13 @@
     <frame x="56" y="-8" width="1552" height="916" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25670242" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25938338" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298153" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39973614" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -541,14 +591,41 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/__main__.pyw">
+    <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/appclass.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="23" lean-forward="false" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
+          <folding>
+            <element signature="e#24#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/cadappqt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__main__.pyw" />
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -601,47 +678,156 @@
     <entry file="file://$PROJECT_DIR$/mymodule.py" />
     <entry file="file://$PROJECT_DIR$/kubos/main.py" />
     <entry file="file://$PROJECT_DIR$/kubos/mymodule.py" />
-    <entry file="file://$PROJECT_DIR$/__main__.pyw">
+    <entry file="file://$PROJECT_DIR$/__main__.pyw" />
+    <entry file="file://$PROJECT_DIR$/lib/appdata.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="17" />
+          <folding>
+            <element signature="e#26#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/subshapes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="9" lean-forward="false" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+          <folding>
+            <element signature="e#2#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/std_events.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/cadappqt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="6" lean-forward="false" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Anaconda3/Lib/site-packages/OCC/TopoDS.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="331" column="17" lean-forward="false" selection-start-line="331" selection-start-column="4" selection-end-line="331" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="289">
+          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding>
+            <element signature="e#2#34#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/appclass.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="23" lean-forward="false" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
+        <state relative-caret-position="151">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding>
             <element signature="e#24#52#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/cadappqt.py">
+    <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="17">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/gui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding>
-            <element signature="e#337#361#0" expanded="true" />
+            <element signature="e#2#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_gui/main_win.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="32" lean-forward="false" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+          <folding>
+            <element signature="e#2#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Anaconda3/Lib/site-packages/OCC/TopAbs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="184" column="0" lean-forward="false" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_gui/object_details.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12">
+          <caret line="62" column="9" lean-forward="false" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
+          <folding>
+            <element signature="e#2#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_gui/viewer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="90" column="69" lean-forward="false" selection-start-line="90" selection-start-column="69" selection-end-line="90" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/doc_ctrl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="52" column="9" lean-forward="true" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
+          <folding>
+            <element signature="e#107#144#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Anaconda3/Lib/site-packages/OCC/XCAFApp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2703">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

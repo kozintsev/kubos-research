@@ -45,7 +45,7 @@ class KubosApp(CadAppQt):
 
     def run(self):
 
-        from . import std_events
+        import std_events
 
         self._menu_bar = self.win.menuBar()
         self._menus = {}

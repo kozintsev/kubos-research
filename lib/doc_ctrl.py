@@ -19,24 +19,6 @@ from lib.subshapes import subshapes
 from std_events import document_modified
 
 
-class ShapeToolCtrl(object):
-
-    # FIXME: This was formerly part of /doc.py and doesn't work at the moment
-
-    def __init__(self, shape_tool):
-        self._shape_tool = shape_tool
-
-    def add_shape(self, shape, make_assembly=True, make_prepare=True):
-        # this can be used instead of "shape_tool.AddShape" and should provide
-        # the same functionality.
-        from OCC import TNaming
-        # equivalent of "XCAFDoc_ShapeTool::addShape"
-        new_label = doc_ctrl.top_label.NewChild()
-        builder = TNaming.TNaming_Builder(new_label)
-        builder.Generated(shape)
-        return new_label
-
-
 class DocCtrl(object):
     """Generic document controller.
 
@@ -50,8 +32,9 @@ class DocCtrl(object):
         self._label_dict = OrderedDict()
 
         h_doc = TDocStd.Handle_TDocStd_Document()
-        XCAFApp.GetApplication().GetObject().NewDocument(
-                        TCollection_ExtendedString(b'MDTV-CAF'), h_doc)
+
+        app = XCAFApp.XCAFApp_Application_GetApplication().GetObject()
+        app.NewDocument(TCollection_ExtendedString("MDTV-CAF"), h_doc)
 
         # type: OCC.TDocStd.TDocStd_Document
         self.document = h_doc.GetObject()
@@ -97,7 +80,8 @@ class DocCtrl(object):
             importer = STEPImporter(bytes(tfile))
             importer.read_file()
             shapes = importer._shapes[0]  # TODO: import other shapes too?
-            comp = TopoDS.TopoDS_compound(shapes)
+            comp = TopoDS.topods_Compound(shapes)
+            # comp = TopoDS.TopoDS_compound(shapes)
             # The second argument of this function determines the shape type.
             #   If it is TopoDS_compound only one shape
             #   containing the others will be loaded.
@@ -186,3 +170,22 @@ class DocCtrl(object):
             self._shape_tool.RemoveComponent(comp)
         self._label_dict.clear()
         document_modified.emit()
+
+
+class ShapeToolCtrl(object):
+
+    # FIXME: This was formerly part of /doc.py and doesn't work at the moment
+
+    def __init__(self, shape_tool):
+        self._shape_tool = shape_tool
+
+    def add_shape(self, shape, make_assembly=True, make_prepare=True):
+        # this can be used instead of "shape_tool.AddShape" and should provide
+        # the same functionality.
+        from OCC import TNaming
+        # equivalent of "XCAFDoc_ShapeTool::addShape"
+        doc_ctrl = DocCtrl()
+        new_label = doc_ctrl.top_label.NewChild()
+        builder = TNaming.TNaming_Builder(new_label)
+        builder.Generated(shape)
+        return new_label

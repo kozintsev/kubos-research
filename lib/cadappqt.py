@@ -35,8 +35,8 @@ class CadAppQt(object):
         self._qapp = _QApplication(sys.argv)
         # Initializing a QApplication changes the system locale for
         # the running program - resetting to default ('C')
-        #from locale import setlocale, LC_ALL
-        #setlocale(LC_ALL, b'C')
+        from locale import setlocale, LC_ALL
+        setlocale(LC_ALL, 'C')
 
     def load_action(self, action, toolbar_area=_QtCore.Qt.TopToolBarArea,
                     toolbar_visible=True):

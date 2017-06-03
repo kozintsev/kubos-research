@@ -60,10 +60,11 @@ class Viewer(QtGui.QWidget):
         self.context.SetDisplayMode(AIS_Shaded)
 
         # Initialize and delete default lights
-        self.viewer.InitActiveLights()
-        for i in range(2):
-            self.viewer.DelLight(self.viewer.ActiveLight())
-            self.viewer.NextActiveLights()
+        # todo: fix later becase crasher
+        # self.viewer.InitActiveLights()
+        # for i in range(2):
+        #     self.viewer.DelLight(self.viewer.ActiveLight())
+        #     self.viewer.NextActiveLights()
 
         # ambient light
         self.add_light(V3d.V3d_AmbientLight(self.viewer.GetHandle()))

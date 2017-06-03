@@ -1,4 +1,0 @@
-recursive-include kubos *.rst
-recursive-include kubos *.svg
-recursive-include kubos *.png
-recursive-include kubos *.theme

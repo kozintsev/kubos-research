@@ -60,12 +60,8 @@ class DocCtrl(object):
 
     def open(self, file):
         """Open a STEP file"""
-        try:
-            # for pythonOCC 0.5
-            from OCC.Utils.DataExchange.STEP import STEPImporter
-        except ImportError:
-            # for pythonOCC 0.6
-            from OCC.DataExchange.STEP import STEPImporter
+        from OCC.STEPControl import STEPControl_Reader
+        from OCC.IFSelect import IFSelect_RetDone, IFSelect_ItemsByEntity
         # Remove all existing shapes
         self.clear()
 
@@ -75,27 +71,37 @@ class DocCtrl(object):
         #   it from there. Corresponding OCCT bug report:
         #   http://tracker.dev.opencascade.org/view.php?id=22484
         with tempfile_.TemporaryDirectory() as tempdir:
-            tfile = os.path.join(tempdir, 'importfile.stp')
-            shutil.copy(file, tfile)
-            importer = STEPImporter(bytes(tfile))
-            importer.read_file()
-            shapes = importer._shapes[0]  # TODO: import other shapes too?
-            comp = TopoDS.topods_Compound(shapes)
-            # comp = TopoDS.TopoDS_compound(shapes)
-            # The second argument of this function determines the shape type.
-            #   If it is TopoDS_compound only one shape
-            #   containing the others will be loaded.
-            for compound in subshapes(comp, TopAbs.TopAbs_COMPOUND):
-                for shape in subshapes(compound, TopAbs.TopAbs_SOLID):
-                    from lib import copy_geom
-                    # FIXME: This is a very ugly workaround, get rid of it:
-                    #    Each shape is copied before adding it to the document
-                    #    Otherwise the method get_comp_label would not find
-                    #    the label of this shape so it could not be removed
-                    #    from the document again
-                    shape = copy_geom.copy(shape)
-                    self.add(shape)
+            # tfile = os.path.join(tempdir, 'importfile.stp')
+            # shutil.copy(file, tfile)
+            step_reader = STEPControl_Reader()
+            status = step_reader.ReadFile(file)
+            if status == IFSelect_RetDone:  # check status
+                failsonly = False
+                step_reader.PrintCheckLoad(failsonly, IFSelect_ItemsByEntity)
+                step_reader.PrintCheckTransfer(failsonly, IFSelect_ItemsByEntity)
 
+                ok = step_reader.TransferRoot(1)
+                _nbs = step_reader.NbShapes()
+                aResShape = step_reader.Shape(1)
+                self.add(aResShape)
+                comp = TopoDS.topods_Compound(aResShape)
+                # comp = TopoDS.TopoDS_compound(shapes)
+                # The second argument of this function determines the shape type.
+                #   If it is TopoDS_compound only one shape
+                #   containing the others will be loaded.
+                for compound in subshapes(comp, TopAbs.TopAbs_COMPOUND):
+                    for shape in subshapes(compound, TopAbs.TopAbs_SOLID):
+                        from lib import copy_geom
+                        # FIXME: This is a very ugly workaround, get rid of it:
+                        #    Each shape is copied before adding it to the document
+                        #    Otherwise the method get_comp_label would not find
+                        #    the label of this shape so it could not be removed
+                        #    from the document again
+                        shape = copy_geom.copy(shape)
+                        self.add(shape)
+
+            else:
+                print("Error: can't read file.")
 
     def save(self, file):
         """Save to a file in STEP format"""

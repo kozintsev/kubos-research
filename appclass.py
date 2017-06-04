@@ -67,12 +67,27 @@ class KubosApp(CadAppQt):
 
         std_events.new_step_activated.connect(self.update_status)
 
+        """
         if appdata.get('mode') == 'script' and appdata.get('filename'):
             from actions import script
             script.load(appdata.get('filename'))
         elif appdata.get('filename'):
             self.doc.open(appdata.get('filename'))
             std_events.document_modified.emit()
+        """
+        self.load_actions('actions.file')
+        self.load_actions('actions.edit')
+        self.load_tools('tools.select')
+        self.load_tools('tools.primitives')
+        self.load_tools('tools.transform')
+        self.load_tools('tools.expand')
+        self.load_tools('tools.delete')
+        self.load_tools('tools.boolean')
+        self.load_actions('actions.view')
+        self.load_actions('actions.option')
+        self.load_actions('actions.help')
+        self.load_tools('tools.bezier')
+        self.load_tools('tools.roof')
 
         if appdata.get('mode') in ['standard', 'test']:
             self.load_actions('actions.file')

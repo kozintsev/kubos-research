@@ -1,7 +1,7 @@
 
 
 from OCC.gp import gp_Pnt
-from OCC import TopoDS
+from OCC.TopoDS import TopoDS_Vertex, TopoDS_Shape, topods_Vertex
 from OCC.BRep import BRep_Tool
 
 from lib.vec import vec
@@ -12,11 +12,11 @@ class point(object):
             self._coord = list(pnt)
         elif isinstance(pnt, gp_Pnt):
             self._coord = [pnt.X(), pnt.Y(), pnt.Z()]
-        elif isinstance(pnt, TopoDS.TopoDS_Vertex):
+        elif isinstance(pnt, TopoDS_Vertex):
             pnt = BRep_Tool.Pnt(pnt)
             self._coord = [pnt.X(), pnt.Y(), pnt.Z()]
-        elif isinstance(pnt, TopoDS.TopoDS_Shape):
-            pnt = BRep_Tool.Pnt(TopoDS.TopoDS_vertex(pnt))
+        elif isinstance(pnt, TopoDS_Shape):
+            pnt = BRep_Tool.Pnt(TopoDS_Vertex(pnt))
             self._coord = [pnt.X(), pnt.Y(), pnt.Z()]
         else:
             raise TypeError
@@ -85,11 +85,12 @@ class gp_Pnt_(gp_Pnt):
             gp_Pnt.__init__(self, *pnt)
         elif isinstance(pnt, gp_Pnt):
             gp_Pnt.__init__(self, pnt)
-        elif isinstance(pnt, TopoDS.TopoDS_Vertex):
+        elif isinstance(pnt, TopoDS_Vertex):
             # convert to type "gp_Pnt"
             gp_Pnt.__init__(self, BRep_Tool.Pnt(pnt))
-        elif isinstance(pnt, TopoDS.TopoDS_Shape):
-            gp_Pnt.__init__(self, BRep_Tool.Pnt(TopoDS.TopoDS_vertex(pnt)))
+        elif isinstance(pnt, TopoDS_Shape):
+            brt = BRep_Tool()
+            gp_Pnt.__init__(self, brt.Pnt(topods_Vertex(pnt)))
         else:
             raise TypeError
 

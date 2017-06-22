@@ -15,34 +15,31 @@ from _gui.tool_options import ToolOptionsDock
 class MainWindow(QMainWindow):
 
     def __init__(self, *args):
-        super(MainWindow, self).__init__(*args)
-        #QMainWindow.__init__(self, *args)
+        # super(MainWindow, self).__init__(*args)
+        QMainWindow.__init__(self, *args)
         self.resize(900, 640)
         self.viewer_3d = KubosViewer(doc_ctrl)
 
         self._splitter = QSplitter(Qt.Horizontal)
 
-        if appdata.get('mode') == 'script':
-            from _gui.text_edit import TextEdit
-            self.editor = TextEdit()
-            self._splitter.addWidget(self.editor)
+        #if appdata.get('mode') == 'script':
+        from _gui.text_edit import TextEdit
+        self.editor = TextEdit()
+        self._splitter.addWidget(self.editor)
 
         self._splitter.addWidget(self.viewer_3d)
 
         self.setCentralWidget(self._splitter)
         self.setIconSize(QSize(22, 22))
 
-        if appdata.get('mode') in ['test', 'standard']:
-            self.command_dock_widget = CommandDockWidget()
-            self.addDockWidget(Qt.RightDockWidgetArea,
-                               self.command_dock_widget)
-        if appdata.get('mode') in ['test', 'standard']:
-            self.tool_options_dock = ToolOptionsDock(self)
-            self.addDockWidget(Qt.RightDockWidgetArea,
-                               self.tool_options_dock)
-            self.object_details_dock = ObjectDetailsDock(self)
-            self.addDockWidget(Qt.RightDockWidgetArea,
-                               self.object_details_dock)
+        # if appdata.get('mode') in ['test', 'standard']:
+        self.command_dock_widget = CommandDockWidget()
+        self.addDockWidget(Qt.RightDockWidgetArea, self.command_dock_widget)
+        #if appdata.get('mode') in ['test', 'standard']:
+        self.tool_options_dock = ToolOptionsDock(self)
+        self.addDockWidget(Qt.RightDockWidgetArea, self.tool_options_dock)
+        self.object_details_dock = ObjectDetailsDock(self)
+        self.addDockWidget(Qt.RightDockWidgetArea, self.object_details_dock)
 
         self.setWindowIcon(appdata.get('icon'))
 

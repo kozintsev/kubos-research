@@ -56,11 +56,11 @@ class KubosApp(CadAppQt):
         # the window is being shown
         self.win.viewer_3d.init2()
 
-        if appdata.get('mode') != 'script':
-            self.win.viewer_3d.grid = True
+        #if appdata.get('mode') != 'script':
+        self.win.viewer_3d.grid = True
 
-        if appdata.get('mode') in ['test', 'standard']:
-            self.show_statusbar()
+        #if appdata.get('mode') in ['test', 'standard']:
+        self.show_statusbar()
 
         std_events.filename_changed.connect(self.update_title)
         std_events.dirty_changed.connect(self.update_title)

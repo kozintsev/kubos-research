@@ -161,7 +161,7 @@ class Viewer(QtGui.QWidget):
             raise TypeError
         color = Quantity_Color(color[0], color[1], color[2], 0)
         ais_shape = AIS_Shape(shape)
-        self.context.SetColor(ais_shape.GetHandle(), color, 0)
+        self.context.SetColor(ais_shape.GetHandle(), color, False)
         # pass False if viewer should not be updated
         self.context.Display(ais_shape.GetHandle(), True)
         self.shape_dict[shape] = ais_shape

@@ -28,14 +28,14 @@ class Extrude(Tool):
         if self.step == 0:
             from OCC import TopExp, TopAbs, BRep
             exp = TopExp.TopExp_Explorer(input, TopAbs.TopAbs_VERTEX)
-            v1 = TopoDS.TopoDS_vertex(exp.Current())
-            v1_ = BRep.BRep_Tool.Pnt(TopoDS.TopoDS_vertex(v1))
+            v1 = TopoDS.topods_Vertex(exp.Current())
+            v1_ = BRep.BRep_Tool.Pnt(TopoDS.TopoDS_Vertex(v1))
             # TODO: 0.3: finish: automatically determine orthogonal direction
             # from
             #   input
             self.previous_data = [input, direction]
             try:
-                wire = TopoDS.TopoDS_wire(input)
+                wire = TopoDS.TopoDS_Wire(input)
                 print(dir(wire))
             except:
                 pass

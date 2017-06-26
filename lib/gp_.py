@@ -90,7 +90,8 @@ class gp_Pnt_(gp_Pnt):
             gp_Pnt.__init__(self, BRep_Tool.Pnt(pnt))
         elif isinstance(pnt, TopoDS_Shape):
             brt = BRep_Tool()
-            gp_Pnt.__init__(self, brt.Pnt(topods_Vertex(pnt)))
+            pnt1 = brt.Pnt(topods_Vertex(pnt))
+            gp_Pnt.__init__(self, pnt1.X, pnt1.Y, pnt1.Z)
         else:
             raise TypeError
 

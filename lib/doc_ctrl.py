@@ -1,12 +1,8 @@
-
-
-try:
-    from collections import OrderedDict
-except ImportError:
-    OrderedDict = dict  # on Python 2.6
+from collections import OrderedDict
 from contextlib import contextmanager
 import os
 import shutil
+import uuid
 
 from OCC import XCAFApp, TDocStd, XCAFDoc, TopLoc, gp
 from OCC.TCollection import TCollection_ExtendedString
@@ -70,38 +66,36 @@ class DocCtrl(object):
         #   file to a temporary loaction with only ASCII characters and read
         #   it from there. Corresponding OCCT bug report:
         #   http://tracker.dev.opencascade.org/view.php?id=22484
-        with tempfile_.TemporaryDirectory() as tempdir:
-            # tfile = os.path.join(tempdir, 'importfile.stp')
-            # shutil.copy(file, tfile)
-            step_reader = STEPControl_Reader()
-            status = step_reader.ReadFile(file)
-            if status == IFSelect_RetDone:  # check status
-                failsonly = False
-                step_reader.PrintCheckLoad(failsonly, IFSelect_ItemsByEntity)
-                step_reader.PrintCheckTransfer(failsonly, IFSelect_ItemsByEntity)
-
-                ok = step_reader.TransferRoot(1)
-                _nbs = step_reader.NbShapes()
-                aResShape = step_reader.Shape(1)
-                self.add(aResShape)
-                comp = TopoDS.topods_Compound(aResShape)
-                # comp = TopoDS.TopoDS_compound(shapes)
-                # The second argument of this function determines the shape type.
-                #   If it is TopoDS_compound only one shape
-                #   containing the others will be loaded.
-                for compound in subshapes(comp, TopAbs.TopAbs_COMPOUND):
-                    for shape in subshapes(compound, TopAbs.TopAbs_SOLID):
-                        from lib import copy_geom
-                        # FIXME: This is a very ugly workaround, get rid of it:
-                        #    Each shape is copied before adding it to the document
-                        #    Otherwise the method get_comp_label would not find
-                        #    the label of this shape so it could not be removed
-                        #    from the document again
-                        shape = copy_geom.copy(shape)
-                        self.add(shape)
-
-            else:
-                print("Error: can't read file.")
+        #with tempfile_.TemporaryDirectory() as tempdir:
+        # tfile = os.path.join(tempdir, 'importfile.stp')
+        # shutil.copy(file, tfile)
+        step_reader = STEPControl_Reader()
+        status = step_reader.ReadFile(file)
+        if status == IFSelect_RetDone:  # check status
+            failsonly = False
+            step_reader.PrintCheckLoad(failsonly, IFSelect_ItemsByEntity)
+            step_reader.PrintCheckTransfer(failsonly, IFSelect_ItemsByEntity)
+            ok = step_reader.TransferRoot(1)
+            _nbs = step_reader.NbShapes()
+            aResShape = step_reader.Shape(1)
+            self.add(aResShape)
+            comp = TopoDS.topods_Compound(aResShape)
+            # comp = TopoDS.TopoDS_Compound(shapes)
+            # The second argument of this function determines the shape type.
+            #   If it is TopoDS_compound only one shape
+            #   containing the others will be loaded.
+            for compound in subshapes(comp, TopAbs.TopAbs_COMPOUND):
+                for shape in subshapes(compound, TopAbs.TopAbs_SOLID):
+                    from lib import copy_geom
+                    # FIXME: This is a very ugly workaround, get rid of it:
+                    #    Each shape is copied before adding it to the document
+                    #    Otherwise the method get_comp_label would not find
+                    #    the label of this shape so it could not be removed
+                    #    from the document again
+                    shape = copy_geom.copy(shape)
+                    self.add(shape)
+        else:
+            print("Error: can't read file.")
 
     def save(self, file):
         """Save to a file in STEP format"""
@@ -143,8 +137,10 @@ class DocCtrl(object):
         #                                              False)
         # the color can be set on either 'shape_label' or 'comp_label' with the
         # same effect
+        _id = uuid.uuid4()
         self.set_color(shape_label, color)
-        self._label_dict[shape_label] = comp_label
+        # todo: тут есть проблема, она заключена в том, что shape_label не является ключевым значением
+        self._label_dict[_id] = comp_label
         self.isnew = False
         document_modified.emit()
 
@@ -172,8 +168,9 @@ class DocCtrl(object):
 
     def clear(self):
         """Remove all shapes from the document"""
-        for comp in list(self._label_dict.values()):
-            self._shape_tool.RemoveComponent(comp)
+        for item in self._label_dict:
+            self._shape_tool.RemoveComponent(self._label_dict[item])
+
         self._label_dict.clear()
         document_modified.emit()
 

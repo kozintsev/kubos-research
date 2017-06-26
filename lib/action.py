@@ -1,5 +1,3 @@
-
-
 from PyQt4.QtGui import QAction
 from PyQt4.QtGui import QIcon
 

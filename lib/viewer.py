@@ -1,18 +1,15 @@
-
 import sys, os
 import ctypes.util
 import threading
 import math
 
+from lib.vec import vec
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QWidget
 from OCC import V3d
 from OCC.Quantity import Quantity_Color, Quantity_NOC_BLACK
 from OCC import TPrsStd
 from OCC.XCAFPrs import XCAFPrs_Driver_GetID
 from OCC.Aspect import Aspect_TOTP_RIGHT_LOWER
-from OCC.Visualization import Display3d
-from OCC.Display import OCCViewer
 from OCC.AIS import AIS_Shaded, AIS_Shape, AIS_WireFrame
 from OCC.TopoDS import TopoDS_Shape
 
@@ -20,18 +17,17 @@ from OCC.Display.backend import load_backend, load_pyqt5, PYQT5
 
 load_backend(PYQT5)
 load_pyqt5()
-from OCC.Display.qtDisplay import qtBaseViewer
 
-from lib.vec import vec
+from OCC.Display.qtDisplay import qtViewer3d
+
 
 if sys.platform != 'win32' and not 'CSF_GraphicShr' in os.environ:
     # Taken from OCC.Display.OCCViewer
     os.environ['CSF_GraphicShr'] = ctypes.util.find_library('TKOpenGl')
 
-
-class Viewer(QWidget):
+class Viewer(qtViewer3d):
     def __init__(self, doc):
-        QWidget.__init__(self)
+        qtViewer3d.__init__(self)
         if sys.platform != 'win32' and 'DISPLAY' not in os.environ:
             raise Exception('The DISPLAY environment variable is not set.')
         self._inited = False
@@ -46,43 +42,19 @@ class Viewer(QWidget):
 
         self.doc = doc
 
-    def GetHandle(self):
-        ''' returns an the identifier of the GUI widget.
-        It must be an integer
-        '''
-        win_id = self.winId()  # this returns either an int or voitptr
-        if not isinstance(win_id, int):  # PyQt4 or 5
-            ## below integer cast may be required because self.winId() can
-            ## returns a sip.voitptr according to the PyQt version used
-            ## as well as the python version
-            win_id = int(win_id)
-        return win_id
-
     def init2(self):
         """Perform the second initialization step. This should be done
         once the viewer is shown."""
-        #self._display = Display3d()
-        #handle = self.GetHandle()
-        #self._display.Init(handle)
-        self._display = OCCViewer.Viewer3d(self.GetHandle())
-        self._display.Create()
-        # background gradient
-        self._display.set_bg_gradient_color(206, 215, 222, 128, 128, 128)
-        # background gradient
-        self._display.display_trihedron()
-        self._display.SetModeShaded()
-        self._display.DisableAntiAliasing()
-        self._inited = True
-        # dict mapping keys to functions
-        #
-        self._display.thisown = False
+        self.canvas = qtViewer3d(self)
+        self.canvas.InitDriver()
+        self.display = self.canvas._display
 
         # types: AIS_InteractiveContext, V3d_View, V3d_Viewer
-        self.context = self._display.GetContext().GetObject()
-        self.view = self._display.GetView().GetObject()
-        self.viewer = self._display.GetViewer().GetObject()
-
+        self.context = self.display.GetContext().GetObject()
+        self.view = self.display.GetView().GetObject()
+        self.viewer = self.display.GetViewer().GetObject()
         self._inited = True
+
         # display the trihedron in the bottom right corner
         self.view.TriedronDisplay(Aspect_TOTP_RIGHT_LOWER, Quantity_NOC_BLACK,
                                   0.08,  V3d.V3d_WIREFRAME)

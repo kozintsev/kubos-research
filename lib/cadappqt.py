@@ -19,14 +19,13 @@ from PyQt5.QtWidgets import QApplication
 from PyQt5 import QtCore
 from PyQt5.QtWidgets import QActionGroup
 
+
 class CadAppQt(object):
     """Base class for CAD applications using the Qt framework.
-    
     The QApplication itself can be accessed as 'self._qapp'.
     """
-
     def __init__(self):
-        super(CadAppQt, self).__init__()
+        # super(CadAppQt, self).__init__()
         self._qapp = QApplication(sys.argv)
         # Initializing a QApplication changes the system locale for
         # the running program - resetting to default ('C')

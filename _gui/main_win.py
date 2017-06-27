@@ -15,9 +15,8 @@ from _gui.tool_options import ToolOptionsDock
 class MainWindow(QMainWindow):
 
     def __init__(self, *args):
-        # super(MainWindow, self).__init__(*args)
         QMainWindow.__init__(self, *args)
-        self.resize(900, 640)
+        self.resize(1024, 768)
         self.viewer_3d = KubosViewer(doc_ctrl)
 
         self._splitter = QSplitter(Qt.Horizontal)

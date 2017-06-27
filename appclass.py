@@ -6,6 +6,7 @@ from doc import doc_ctrl
 
 from PyQt5.QtGui import QIcon as _QIcon
 
+
 class KubosApp(CadAppQt):
     def __init__(self, *args, **kwargs):
 
@@ -47,9 +48,7 @@ class KubosApp(CadAppQt):
         self._toolbars = {}
 
     def run(self):
-
         import std_events
-
         self.win.showMaximized()
         # second initialization step for the viewer - must be called once
         # the window is being shown

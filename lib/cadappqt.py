@@ -87,6 +87,5 @@ class CadAppQt(object):
             self.load_action(tool.action, QtCore.Qt.LeftToolBarArea,
                              module.toolbar_visible)
 
-
     def exec_(self, *args, **kwargs):
         self._qapp.exec_(*args, **kwargs)

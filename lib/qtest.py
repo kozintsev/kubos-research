@@ -5,9 +5,9 @@
 # FIXME: don't import app
 from app import app
 
-from PyQt4.QtTest import QTest
-from PyQt4.QtGui import QCursor
-from PyQt4.QtCore import Qt, QPoint
+from PyQt5.QtTest import QTest
+from PyQt5.QtGui import QCursor
+from PyQt5.QtCore import Qt, QPoint
 
 
 def init(window, time_=.5):

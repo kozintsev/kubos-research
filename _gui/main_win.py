@@ -27,9 +27,11 @@ class MainWindow(QMainWindow):
         self._splitter.addWidget(self.editor)
 
         self._splitter.addWidget(self.viewer_3d)
+        # self.setCentralWidget(self.viewer_3d)
 
         self.setCentralWidget(self._splitter)
         self.setIconSize(QSize(22, 22))
+        self.resize(1024, 768)
 
         # if appdata.get('mode') in ['test', 'standard']:
         self.command_dock_widget = CommandDockWidget()

@@ -16,10 +16,8 @@ class KubosApp(CadAppQt):
             pass
 
         CadAppQt.__init__(self)
-
         # set application directory
         appdata.set('APPDIR', appdir)
-
         # Search for icons in './icons/kubos'.
         if appdata.get('APPDIR') is not None:
             ip = _QIcon.themeSearchPaths() + [_path.join(appdata.get('APPDIR'), 'icons')]

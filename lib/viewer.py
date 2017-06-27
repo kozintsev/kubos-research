@@ -29,9 +29,9 @@ if sys.platform != 'win32' and not 'CSF_GraphicShr' in os.environ:
     os.environ['CSF_GraphicShr'] = ctypes.util.find_library('TKOpenGl')
 
 
-class Viewer(qtBaseViewer):
+class Viewer(QWidget):
     def __init__(self, doc):
-        qtBaseViewer.__init__(self)
+        QWidget.__init__(self)
         if sys.platform != 'win32' and 'DISPLAY' not in os.environ:
             raise Exception('The DISPLAY environment variable is not set.')
         self._inited = False

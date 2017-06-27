@@ -10,5 +10,5 @@ cube = BRepPrimAPI.BRepPrimAPI_MakeBox(
 def copy(shape):
     """Return a copy of the shape that does not reference the original shape"""
     new = BRepAlgoAPI.BRepAlgoAPI_Common(shape, cube).Shape()
-    comp = TopoDS.TopoDS_compound(new)
+    comp = TopoDS.TopoDS_Compound(new)
     return subshapes(comp, shape.ShapeType())[0]

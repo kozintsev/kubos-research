@@ -4,8 +4,7 @@ from data import appdata
 from lib.cadappqt import CadAppQt
 from doc import doc_ctrl
 
-from PyQt4.QtGui import QIcon as _QIcon
-
+from PyQt5.QtGui import QIcon as _QIcon
 
 class KubosApp(CadAppQt):
     def __init__(self, *args, **kwargs):

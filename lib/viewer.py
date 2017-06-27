@@ -1,20 +1,26 @@
 
-
 import sys, os
 import ctypes.util
 import threading
 import math
 
-from PyQt4 import QtGui
-from PyQt4.QtCore import Qt
+from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QWidget
 from OCC import V3d
 from OCC.Quantity import Quantity_Color, Quantity_NOC_BLACK
 from OCC import TPrsStd
 from OCC.XCAFPrs import XCAFPrs_Driver_GetID
 from OCC.Aspect import Aspect_TOTP_RIGHT_LOWER
 from OCC.Visualization import Display3d
+from OCC.Display import OCCViewer
 from OCC.AIS import AIS_Shaded, AIS_Shape, AIS_WireFrame
 from OCC.TopoDS import TopoDS_Shape
+
+from OCC.Display.backend import load_backend, load_pyqt5, PYQT5
+
+load_backend(PYQT5)
+load_pyqt5()
+from OCC.Display.qtDisplay import qtBaseViewer
 
 from lib.vec import vec
 
@@ -22,10 +28,10 @@ if sys.platform != 'win32' and not 'CSF_GraphicShr' in os.environ:
     # Taken from OCC.Display.OCCViewer
     os.environ['CSF_GraphicShr'] = ctypes.util.find_library('TKOpenGl')
 
-class Viewer(QtGui.QWidget):
-    
+
+class Viewer(qtBaseViewer):
     def __init__(self, doc):
-        QtGui.QWidget.__init__(self)
+        qtBaseViewer.__init__(self)
         if sys.platform != 'win32' and 'DISPLAY' not in os.environ:
             raise Exception('The DISPLAY environment variable is not set.')
         self._inited = False
@@ -40,13 +46,37 @@ class Viewer(QtGui.QWidget):
 
         self.doc = doc
 
+    def GetHandle(self):
+        ''' returns an the identifier of the GUI widget.
+        It must be an integer
+        '''
+        win_id = self.winId()  # this returns either an int or voitptr
+        if not isinstance(win_id, int):  # PyQt4 or 5
+            ## below integer cast may be required because self.winId() can
+            ## returns a sip.voitptr according to the PyQt version used
+            ## as well as the python version
+            win_id = int(win_id)
+        return win_id
+
     def init2(self):
         """Perform the second initialization step. This should be done
         once the viewer is shown."""
-        self._display = Display3d()
-        # TODO: on Linux, self.winId returns a 'long' - if this is similar on
-        # other platforms, conversion to int may not be neccessary
-        self._display.Init(int(self.winId()))
+        #self._display = Display3d()
+        #handle = self.GetHandle()
+        #self._display.Init(handle)
+        self._display = OCCViewer.Viewer3d(self.GetHandle())
+        self._display.Create()
+        # background gradient
+        self._display.set_bg_gradient_color(206, 215, 222, 128, 128, 128)
+        # background gradient
+        self._display.display_trihedron()
+        self._display.SetModeShaded()
+        self._display.DisableAntiAliasing()
+        self._inited = True
+        # dict mapping keys to functions
+        #
+        self._display.thisown = False
+
         # types: AIS_InteractiveContext, V3d_View, V3d_Viewer
         self.context = self._display.GetContext().GetObject()
         self.view = self._display.GetView().GetObject()
@@ -103,15 +133,17 @@ class Viewer(QtGui.QWidget):
                 self.view.MustBeResized()
 
     def wheelEvent(self, event):
-        self.zoom *= 1.001**event.delta()
+        self.zoom *= 1.001** event.delta()
 
     def _get_zoom(self):
         return self._zoom
+
     def _set_zoom(self, value):
         if 0.013 < value < 4000:
             self.view.SetZoom(value / self._zoom)
             self._zoom = value
             self._update_grid_size()
+
     zoom = property(_get_zoom, _set_zoom)
 
     def pan(self, d):
@@ -120,9 +152,10 @@ class Viewer(QtGui.QWidget):
     # TODO: rename to 'viewdir'
     def _get_eye(self):
         return self._eye
+
     def _set_eye(self, value):
         value = vec(value)
-        value = value*(1/value.length())
+        value = value * (1 / value.length())
         self.view.SetEye(*value)
         if value[0] == value[1] == 0:
             # this is the only case where the orientation of the view is
@@ -132,6 +165,7 @@ class Viewer(QtGui.QWidget):
             # make the z-Axis vertical
             self.view.SetTwist(0)
         self._eye = value
+
     eye = property(_get_eye, _set_eye)
 
     def repaint0(self):
@@ -175,10 +209,12 @@ class Viewer(QtGui.QWidget):
     def _get_view_mode(self):
         """"Style in which the view is presented ("wireframe" or "shaded")"""
         return self._view_mode
+
     def _set_view_mode(self, value):
         self._view_mode = value
         if value == 'shaded':
             self.context.SetDisplayMode(AIS_Shaded)
         elif value == 'wireframe':
             self.context.SetDisplayMode(AIS_WireFrame)
+
     view_mode = property(_get_view_mode, _set_view_mode)

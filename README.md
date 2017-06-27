@@ -9,7 +9,7 @@ Need to setup:
 1. [Anaconda][1]
 2. [PyCharm Community][2]
 3. [PythonOCC][3], use command promt: 
-> conda install -c conda-forge -c dlr-sc -c pythonocc -c oce pythonocc-core==0.18
+> conda install -c conda-forge -c dlr-sc -c pythonocc -c oce pythonocc-core==0.18 python=3
 4. Need to setup QT4:
 > conda install qt=4.8.7
 

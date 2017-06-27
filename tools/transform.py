@@ -2,7 +2,7 @@
 
 import math
 
-from PyQt4.QtCore import Qt
+from PyQt5.QtCore import Qt
 from OCC import gp, TopLoc, GC, BRepBuilderAPI
 
 from lib.vec import vec

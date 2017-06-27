@@ -2,7 +2,7 @@
 
 from lib.doc_ctrl import DocCtrl
 
-from PyQt4.QtCore import Qt
+from PyQt5.QtCore import Qt
 
 from data import appdata
 import std_events

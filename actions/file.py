@@ -4,8 +4,8 @@ import sys
 import os
 import subprocess
 
-from PyQt4 import QtGui
-from PyQt4.QtGui import QMessageBox
+from PyQt5.QtGui import QKeySequence
+from PyQt5.QtWidgets import QMessageBox, QFileDialog
 
 from lib.action import Action
 import std_events
@@ -24,7 +24,7 @@ def new_():
 def open_():
     """Open a STEP file."""
 
-    filename = QtGui.QFileDialog.getOpenFileName(
+    filename = QFileDialog.getOpenFileName(
                 win, 'Open File', appdata.get('filename'), 'STEP files (*.stp *.step)')
     if not filename:
         # cancelled by the user
@@ -53,7 +53,7 @@ def _save():
 
 
 def _save_as():
-    filename = QtGui.QFileDialog.getSaveFileName(
+    filename = QFileDialog.getSaveFileName(
           win, 'Save File', appdata.get('filename'), 
           'STEP files (*.stp *.step)')
     if filename:
@@ -87,15 +87,15 @@ def on_dirty_changed():
 std_events.dirty_changed.connect(on_dirty_changed)
 
 new = Action(new_, ['&File', '&New'], icon='document-new',
-             shortcut=QtGui.QKeySequence.New)
+             shortcut=QKeySequence.New)
 open = Action(open_, ['&File', '&Open'], icon='document-open',
-              shortcut=QtGui.QKeySequence.Open)
+              shortcut=QKeySequence.Open)
 save = Action(_save, ['&File', '&Save'], icon='document-save',
-              shortcut=QtGui.QKeySequence.Save)
+              shortcut=QKeySequence.Save)
 save_as = Action(_save_as, ['&File', 'Save &As'],
-                 icon='document-save-as', shortcut=QtGui.QKeySequence.SaveAs)
+                 icon='document-save-as', shortcut=QKeySequence.SaveAs)
 quit = Action(quit_, ['&File', '&Quit'], icon='application-exit',
-              shortcut=QtGui.QKeySequence.Quit)
+              shortcut=QKeySequence.Quit)
 
 toolbar_visible = False
 

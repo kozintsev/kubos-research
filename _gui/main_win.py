@@ -1,6 +1,6 @@
 # from PyQt4 import QtCore, QtGui
-from PyQt4.QtCore import Qt, QSize
-from PyQt4.QtGui import QMainWindow, QSplitter
+from PyQt5.QtCore import Qt, QSize
+from PyQt5.QtWidgets import QMainWindow, QSplitter
 
 import tools
 import active_tool

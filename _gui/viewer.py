@@ -3,7 +3,7 @@
 import sys
 import math
 
-from PyQt4 import QtCore, QtGui
+from PyQt5 import QtCore, QtGui
 from OCC.Aspect import Aspect_GDM_Lines, Aspect_GT_Rectangular
 from OCC import TopAbs
 from OCC.gp import gp_Ax3, gp_Dir

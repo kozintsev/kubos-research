@@ -15,9 +15,9 @@ except ValueError:
 import sys
 from lib import importlib as _importlib
 
-from PyQt4.QtGui import QApplication
-from PyQt4 import QtCore
-from PyQt4.QtGui import QActionGroup
+from PyQt5.QtWidgets import QApplication
+from PyQt5 import QtCore
+from PyQt5.QtWidgets import QActionGroup
 
 class CadAppQt(object):
     """Base class for CAD applications using the Qt framework.

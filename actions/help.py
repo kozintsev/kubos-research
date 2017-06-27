@@ -1,22 +1,19 @@
 # -*- coding: UTF-8 -*-
-
-
-
-from PyQt4 import QtGui, QtCore
-
+from PyQt5 import QtCore
+from PyQt5.QtGui import QKeySequence
+from PyQt5.QtWidgets import QDialog, QVBoxLayout, QLabel, QDialogButtonBox, QWhatsThis
 from lib.action import Action
 from data import appdata
 from gui import win
 
 
-class AboutDlg(QtGui.QDialog):
-
+class AboutDlg(QDialog):
     def __init__(self, parent=None):
-        QtGui.QDialog.__init__(self, parent)
+        QDialog.__init__(self, parent)
         self.setWindowTitle('About {0}'.format(appdata.get('APPLICATION_NAME')))
-        layout = QtGui.QVBoxLayout()
+        layout = QVBoxLayout()
 
-        logo_label = QtGui.QLabel()
+        logo_label = QLabel()
         logo_label.setPixmap(appdata.get('icon').pixmap(128))
         logo_label.setAlignment(QtCore.Qt.AlignCenter)
 
@@ -28,57 +25,59 @@ class AboutDlg(QtGui.QDialog):
         text = text.format(appdata.get('APPLICATION_NAME'),
                            appdata.get('VERSION'),
                            appdata.get('AUTHORS'))
-        text_label = QtGui.QLabel(text)
+        text_label = QLabel(text)
 
-        button_box = QtGui.QDialogButtonBox(QtGui.QDialogButtonBox.Ok)
+        button_box = QDialogButtonBox(QDialogButtonBox.Ok)
         button_box.accepted.connect(self.close)
 
         for widget in [logo_label, text_label, button_box]:
             layout.addWidget(widget)
         self.setLayout(layout)
 
+
 about_dlg = AboutDlg(win)
 menu = ['&Help', '&About {0}'.format(appdata.get('APPLICATION_NAME'))]
 open_about_dlg = Action(about_dlg.show, menu, icon='kubos')
 
-class KnownIssues(QtGui.QDialog):
-    
+
+class KnownIssues(QDialog):
     def __init__(self, *args, **kwargs):
-        QtGui.QDialog.__init__(self, *args, **kwargs)
+        QDialog.__init__(self, *args, **kwargs)
         self.setWindowTitle('Known issues - {0} {1}'.format(
-                    appdata.get('APPLICATION_NAME'), appdata.get('VERSION')))
-        layout = QtGui.QVBoxLayout()
+            appdata.get('APPLICATION_NAME'), appdata.get('VERSION')))
+        layout = QVBoxLayout()
 
         text = (
-          'Kubos is still in a relatively early stage of development.\n\n'
-          'The following issues are known to the developer (and are '
-          'being worked on):\n\n'
-          '• Object colors will not be loaded / saved\n'
-          '• Importing large objects (with coordinate values exceeding '
-          '  10000) will result in incomplete objects\n'
-          '• Intersecting curves will only yield one intersection point\n'
-          '• Computing the intersection of curves will lead to incorrect '
-          '  results if the curves do not intersect.\n'
-          '• Loading of models that contain independent faces or edges '
-          '  does not work')
-        
-        text_label = QtGui.QLabel(text)
+            'Kubos is still in a relatively early stage of development.\n\n'
+            'The following issues are known to the developer (and are '
+            'being worked on):\n\n'
+            '• Object colors will not be loaded / saved\n'
+            '• Importing large objects (with coordinate values exceeding '
+            '  10000) will result in incomplete objects\n'
+            '• Intersecting curves will only yield one intersection point\n'
+            '• Computing the intersection of curves will lead to incorrect '
+            '  results if the curves do not intersect.\n'
+            '• Loading of models that contain independent faces or edges '
+            '  does not work')
+
+        text_label = QLabel(text)
         text_label.setWordWrap(True)
         text_label.setFixedWidth(400)
 
-        button_box = QtGui.QDialogButtonBox(QtGui.QDialogButtonBox.Ok)
+        button_box = QDialogButtonBox(QDialogButtonBox.Ok)
         button_box.accepted.connect(self.close)
 
         for widget in [text_label, button_box]:
             layout.addWidget(widget)
         self.setLayout(layout)
 
+
 known_issues = KnownIssues(win)
 open_known_issues = Action(known_issues.show, ['&Help', '&Known Issues'])
 
-whats_this = Action(QtGui.QWhatsThis.enterWhatsThisMode,
+whats_this = Action(QWhatsThis.enterWhatsThisMode,
                     ['&Help', "&What's This?"], icon='help-contextual',
-                    shortcut=QtGui.QKeySequence.WhatsThis)
+                    shortcut=QKeySequence.WhatsThis)
 
 toolbar_visible = False
 toolbar_area = QtCore.Qt.TopToolBarArea

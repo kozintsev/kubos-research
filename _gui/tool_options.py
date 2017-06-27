@@ -1,35 +1,36 @@
 
 
-from PyQt4 import QtGui, QtCore
-from PyQt4.QtCore import Qt
+from PyQt5 import QtGui, QtCore
+from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QDockWidget, QLabel, QHBoxLayout, QVBoxLayout, QCheckBox, QWidget
 
 from data import appdata
 from std_events import new_tool_activated
 import active_tool
 
 
-class ToolOptionsDock(QtGui.QDockWidget):
+class ToolOptionsDock(QDockWidget):
 
     def __init__(self, parent):
-        QtGui.QDockWidget.__init__(self, 'Tool Options', parent)
-        layout = QtGui.QVBoxLayout()
+        QDockWidget.__init__(self, 'Tool Options', parent)
+        layout = QVBoxLayout()
 
-        tool_name = QtGui.QLabel('<h2>test</h2>')
-        tool_icon = QtGui.QLabel()
+        tool_name = QLabel('<h2>test</h2>')
+        tool_icon = QLabel()
         tool_icon.setPixmap(appdata.get('icon').pixmap(22))
-        layout_d = QtGui.QHBoxLayout()
+        layout_d = QHBoxLayout()
         layout_d.addWidget(tool_icon)
         layout_d.addWidget(tool_name)
         layout_d.setAlignment(tool_name, QtCore.Qt.AlignLeft)
-        tool_details = QtGui.QLabel()
+        tool_details = QLabel()
         tool_details.setLayout(layout_d)
 
-        self.copy_checkbox = QtGui.QCheckBox('Always &Keep Originals')
+        self.copy_checkbox = QCheckBox('Always &Keep Originals')
 
         #layout.addWidget(tool_details)
         layout.addWidget(self.copy_checkbox)
 
-        widget = QtGui.QWidget()
+        widget = QWidget()
         widget.setLayout(layout)
         widget.setMinimumWidth(120)
         widget.setMaximumHeight(60)

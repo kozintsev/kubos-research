@@ -2,7 +2,7 @@
 
 from OCC import BRepBuilderAPI, GC, gp, Geom
 from OCC.BRepPrimAPI import BRepPrimAPI_MakeSphere
-from PyQt4 import QtCore
+from PyQt5 import QtCore
 
 from .tool import Tool
 from exceptions_ import InvalidInputException

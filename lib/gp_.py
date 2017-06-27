@@ -1,5 +1,3 @@
-
-
 from OCC.gp import gp_Pnt
 from OCC.TopoDS import TopoDS_Vertex, TopoDS_Shape, topods_Vertex
 from OCC.BRep import BRep_Tool
@@ -89,9 +87,9 @@ class gp_Pnt_(gp_Pnt):
             # convert to type "gp_Pnt"
             gp_Pnt.__init__(self, BRep_Tool.Pnt(pnt))
         elif isinstance(pnt, TopoDS_Shape):
-            brt = BRep_Tool()
-            pnt1 = brt.Pnt(topods_Vertex(pnt))
-            gp_Pnt.__init__(self, pnt1.X, pnt1.Y, pnt1.Z)
+            self.brt = BRep_Tool()
+            self.pnt1 = self.brt.Pnt(topods_Vertex(pnt))
+            gp_Pnt.__init__(self, self.pnt1.XYZ())
         else:
             raise TypeError
 
@@ -137,5 +135,5 @@ class gp_Pnt_(gp_Pnt):
             if start <= 2 < stop:
                 self.SetZ(value[2 - start])
 
-    def __repr__(self):
-        return 'gp_Pnt_({0})'.format(str(self[0:3]))
+    #def __repr__(self):
+    #    return 'gp_Pnt_({0})'.format(str(self[0:3]))

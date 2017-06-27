@@ -2,6 +2,7 @@
 
 from OCC import BRepBuilderAPI, GC, gp, Geom
 from OCC.BRepPrimAPI import BRepPrimAPI_MakeSphere
+from OCC.gp import gp_Pnt
 from PyQt4 import QtCore
 
 from .tool import Tool
@@ -23,9 +24,9 @@ class Point(Tool):
 
         self.reset()
 
-    def preview(self, input, direction):
+    def preview(self, input_pnt, direction):
         assert self.step == 0
-        preview = BRepBuilderAPI.BRepBuilderAPI_MakeVertex(input).Vertex()
+        preview = BRepBuilderAPI.BRepBuilderAPI_MakeVertex(input_pnt).Vertex()
         self._final = [preview]
         return self._final
 
@@ -44,17 +45,17 @@ class Segment(Tool):
 
         self.reset()
 
-    def preview(self, input, direction):
+    def preview(self, inp, direction):
         if self.step == 0:
-            self.previous_data = [input]
-            return [BRepBuilderAPI.BRepBuilderAPI_MakeVertex(input).Vertex()]
+            self.previous_data = [inp]
+            return [BRepBuilderAPI.BRepBuilderAPI_MakeVertex(inp).Vertex()]
         elif self.step == 1:
             point0 = self.previous_data[0]
             # checking if the previous points are identical: This is necessary
             # before continuing in order to avoid a crash on Windows
-            if point0 == input:
+            if point0 == inp:
                 raise InvalidInputException
-            a = GC.GC_MakeSegment(input, point0).Value()
+            a = GC.GC_MakeSegment(inp, point0).Value()
             b = BRepBuilderAPI.BRepBuilderAPI_MakeEdge(a).Edge()
             self._final = [BRepBuilderAPI.BRepBuilderAPI_MakeWire(b).Wire()]
             return self._final
@@ -75,17 +76,17 @@ class Line(Tool):
 
         self.reset()
 
-    def preview(self, input, direction):
+    def preview(self, inp, direction):
         if self.step == 0:
-            self.previous_data = [input]
-            return [BRepBuilderAPI.BRepBuilderAPI_MakeVertex(input).Vertex()]
+            self.previous_data = [inp]
+            return [BRepBuilderAPI.BRepBuilderAPI_MakeVertex(inp).Vertex()]
         elif self.step == 1:
             point0 = self.previous_data[0]
             # checking if the previous points are identical: This is necessary
             # before continuing in order to avoid a crash on Windows
-            if point0 == input:
+            if point0 == inp:
                 raise InvalidInputException
-            point1 = input
+            point1 = inp
             dir_ = point1 - point0
             len = dir_.length()
             p0 = point0 + 1000/len * dir_
@@ -111,21 +112,21 @@ class Circle(Tool):
 
         self.reset()
 
-    def preview(self, input, direction):
+    def preview(self, inp, direction):
         if self.step == 0:
-            self.previous_data = [input]
-            return [BRepBuilderAPI.BRepBuilderAPI_MakeVertex(input).Vertex()]
+            self.previous_data = [inp]
+            return [BRepBuilderAPI.BRepBuilderAPI_MakeVertex(inp).Vertex()]
         elif self.step == 1:
             point0 = self.previous_data[0]
             # checking if the previous points are identical: This is necessary
             # before continuing in order to avoid a crash on Windows
-            if point0 == input:
+            if point0 == inp:
                 raise InvalidInputException
             dirvec = vec(0, 0, 0)
             dirvec[direction] = 1
             axis = gp.gp_Ax2(point0, dirvec.to_gp_Dir())
 
-            d = point0 - input
+            d = point0 - inp
             d[direction] = 0
             dist = d.length()
 
@@ -151,13 +152,13 @@ class Disk(Tool):
 
         self.reset()
 
-    def preview(self, input, direction):
+    def preview(self, inp, direction):
         if self.step == 0:
-            self.previous_data = [input]
-            return [BRepBuilderAPI.BRepBuilderAPI_MakeVertex(input).Vertex()]
+            self.previous_data = [inp]
+            return [BRepBuilderAPI.BRepBuilderAPI_MakeVertex(inp).Vertex()]
         elif self.step == 1:
             point0 = self.previous_data[0]
-            point1 = input
+            point1 = inp
             # checking if the previous points are identical: This is necessary
             # before continuing in order to avoid a crash on Windows
             if point0 == point1:
@@ -166,7 +167,7 @@ class Disk(Tool):
             dirvec[direction] = 1
             axis = gp.gp_Ax2(point0, dirvec.to_gp_Dir())
 
-            d = point0 - input
+            d = point0 - inp
             d[direction] = 0
             dist = d.length()
 
@@ -193,13 +194,13 @@ class Rectangle(Tool):
 
         self.reset()
 
-    def preview(self, input, direction):
+    def preview(self, inp, direction):
         if self.step == 0:
-            self.previous_data = [input]
-            return [BRepBuilderAPI.BRepBuilderAPI_MakeVertex(input).Vertex()]
+            self.previous_data = [inp]
+            return [BRepBuilderAPI.BRepBuilderAPI_MakeVertex(inp).Vertex()]
         elif self.step == 1:
             point0 = self.previous_data[0]
-            point1 = input
+            point1 = inp
             point1[direction] = point0[direction]
             if (point1[direction-1] == point0[direction-1] or
                 point1[direction-2] == point0[direction-2]):
@@ -256,13 +257,13 @@ class Sphere(Tool):
 
         self.reset()
 
-    def preview(self, input, direction):
+    def preview(self, inp, direction):
         if self.step == 0:
-            self.previous_data = [input]
-            return [BRepBuilderAPI.BRepBuilderAPI_MakeVertex(input).Vertex()]
+            self.previous_data = [inp]
+            return [BRepBuilderAPI.BRepBuilderAPI_MakeVertex(inp).Vertex()]
         elif self.step == 1:
             center = self.previous_data[0]
-            radius = (center - input).length()
+            radius = (center - inp).length()
             if not radius:
                 raise InvalidInputException
             self._final = [BRepPrimAPI_MakeSphere(center, radius).Solid()]

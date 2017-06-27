@@ -54,7 +54,7 @@ class ObjectDetailsDock(QtGui.QDockWidget):
         selection = gui.viewer_3d._selection
         # self.lbl = doc.doc_ctrl.get_shape_label(selection)
         # lbl_ = doc.doc_ctrl.get_comp_label(selection)
-        self.tag_label.setText('Tag:\n' + str(tag_list(self.lbl)))
+        # self.tag_label.setText('Tag:\n' + str(tag_list(self.lbl)))
         # '\n' + str(tag_list(lbl_)))
 
     def set_color(self, color):

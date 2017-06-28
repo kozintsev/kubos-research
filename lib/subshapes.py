@@ -22,7 +22,7 @@ def subshapes(shape, shapetype):
         i = id(v)
         # v2 = convertor(exp.Current())
         k = get_key(_convertors, t)
-        shapelist.append(convertor)
+        shapelist.append(v)
         exp.Next()
     return shapelist
 

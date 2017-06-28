@@ -11,8 +11,7 @@ from lib.subshapes import subshapes
 
 def intersection(a, b):
 
-    if set([a.ShapeType(), b.ShapeType()]) <= set([TopAbs.TopAbs_WIRE,
-                                                   TopAbs.TopAbs_EDGE]):
+    if set([a.ShapeType(), b.ShapeType()]) <= set([TopAbs.TopAbs_WIRE, TopAbs.TopAbs_EDGE]):
         # TODO: check if the computed point is within the bounded part of
         # the curves
         l = []

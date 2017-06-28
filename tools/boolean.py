@@ -1,5 +1,3 @@
-
-
 from PyQt4 import QtCore
 from OCC import TopAbs
 
@@ -63,13 +61,13 @@ class Difference(Tool):
 
         self.reset()
 
-    def preview(self, input, direction):
+    def preview(self, inp, direction):
         if self.step == 0:
-            self.previous_data = [input]
+            self.previous_data = [inp]
             return []
         elif self.step == 1:
-            self.remove = [self.previous_data[0], input]
-            self._final = boolean.difference(self.previous_data[0], input)
+            self.remove = [self.previous_data[0], inp]
+            self._final = boolean.difference(self.previous_data[0], inp)
             return self._final
 
 
@@ -86,14 +84,14 @@ class Union(Tool):
 
         self.reset()
 
-    def preview(self, input, direction):
+    def preview(self, inp, direction):
         if self.step == 0:
-            self.previous_data = [input]
+            self.previous_data = [inp]
             return []
         elif self.step == 1:
-            self.remove = [self.previous_data[0], input]
+            self.remove = [self.previous_data[0], inp]
             try:
-                self._final = boolean.union(self.previous_data[0], input)[0:1]
+                self._final = boolean.union(self.previous_data[0], inp)[0:1]
             except RuntimeError:
                 raise InvalidInputException
             return self._final

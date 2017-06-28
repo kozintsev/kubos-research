@@ -137,8 +137,8 @@ class DocCtrl(object):
         #                                              False)
         # the color can be set on either 'shape_label' or 'comp_label' with the
         # same effect
-        _id = uuid.uuid4()
         self.set_color(shape_label, color)
+        _id = id(shape_label)
         # todo: тут есть проблема, она заключена в том, что shape_label не является ключевым значением
         self._label_dict[_id] = comp_label
         self.isnew = False

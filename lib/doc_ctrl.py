@@ -139,6 +139,7 @@ class DocCtrl(object):
         # same effect
         self.set_color(shape_label, color)
         _id = id(shape_label)
+        tag = shape_label.Tag()
         # todo: тут есть проблема, она заключена в том, что shape_label не является ключевым значением
         self._label_dict[_id] = comp_label
         self.isnew = False

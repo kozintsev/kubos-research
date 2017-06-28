@@ -1,0 +1,20 @@
+Windows PowerShell
+(C) Корпорация Майкрософт (Microsoft Corporation), 2013. Все права защищены.
+
+PS C:\Users\Oleg> conda list oce
+# packages in environment at C:\Anaconda3:
+#
+oce                       0.17.2                   vc14_4  [vc14]  dlr-sc
+PS C:\Users\Oleg> conda list pythonocc
+# packages in environment at C:\Anaconda3:
+#
+pythonocc-core            0.17.2              py35_vc14_1  [vc14]  pythonocc
+PS C:\Users\Oleg> python
+Python 3.5.3 |Anaconda 4.0.0 (64-bit)| (default, Feb 22 2017, 21:28:42) [MSC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> exit()
+PS C:\Users\Oleg> conda list pyqt
+# packages in environment at C:\Anaconda3:
+#
+pyqt                      4.11.4                   py35_5
+PS C:\Users\Oleg>

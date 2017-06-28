@@ -22,13 +22,13 @@ class Intersection(Tool):
 
         self.reset()
 
-    def preview(self, input, direction):
+    def preview(self, inp, direction):
         if self.step == 0:
-            self.previous_data = [input]
+            self.previous_data = [inp]
             return []
         elif self.step == 1:
             shape_1 = self.previous_data[0]
-            shape_2 = input
+            shape_2 = inp
             try:
                 self._final = boolean.intersection(shape_1, shape_2)
             except ConstructionError:

@@ -29,7 +29,7 @@ def intersection(a, b):
         return l
 
     c = BRepAlgoAPI.BRepAlgoAPI_Common(a, b).Shape()
-    comp = TopoDS.TopoDS_compound(c)
+    comp = TopoDS.topods_Compound(c)
     # get the subshape of the compound:
     types = set([a.ShapeType(), b.ShapeType()])
     # compound = 0
@@ -64,7 +64,7 @@ def union(a, b):
     # BRepAlgoAPI_Fuse does not work correctly here: It returns the difference
     # instead of the fuse
     c = BRepAlgo.BRepAlgo_Fuse(a, b).Shape()
-    comp = TopoDS.TopoDS_compound(c)
+    comp = TopoDS.topods_Compound(c)
     # get the subshape of the compound:
     if set([a.ShapeType(), b.ShapeType()]) == set([TopAbs.TopAbs_FACE]):
         return subshapes(comp, TopAbs.TopAbs_FACE)
@@ -77,7 +77,7 @@ def union(a, b):
 def difference(a, b):
     # using BRepAlgoAPI wold cause some problems here
     c = BRepAlgo.BRepAlgo_Cut(a, b).Shape()
-    comp = TopoDS.TopoDS_compound(c)
+    comp = TopoDS.topods_Compound(c)
     # get the subshape of the compound:
     if set([a.ShapeType(), b.ShapeType()]) == set([TopAbs.TopAbs_FACE]):
         return subshapes(comp, TopAbs.TopAbs_FACE)

@@ -11,18 +11,19 @@ Need to setup:
 3. [PythonOCC][3]
 4. Need to setup PyQT4
 
-Command prompt for anaconda:
+Command prompt for anaconda.
 
 #### Create the environment
 
 >conda create -n py35_qt4 python=3.5 anaconda
 
 
-# Activate the new environment
-activate py35_qt4
+#### Activate the new environment
+
+>activate py35_qt4
 
 
-# Install the PyQt4 package in the new environment
+#### Install the PyQt4 package in the new environment
 
 >conda uninstall pyqt
 
@@ -31,13 +32,14 @@ activate py35_qt4
 Use path C:\Anaconda3\envs\py35_qt4\python.exe to your IDE.
 
 >conda install -c dlr-sc -c oce -c pythonocc pythonocc-core
+
 >conda install -y -c conda-forge freetype=2.7
 
 maybe:
 
 >conda install -c conda-forge -c dlr-sc -c pythonocc -c oce pythonocc-core==0.17
 
-Tested environment:
+### Tested environment:
 
 - Python 3.5
 - PyQt4

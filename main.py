@@ -1,7 +1,5 @@
 # -*- coding: UTF-8 -*-
-
 #convert to Python 3
-
 # TODO: check occurences of document_modified.emit(), reduce them
 from data import appdata
 from app import app

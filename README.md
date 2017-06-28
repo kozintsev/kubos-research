@@ -6,12 +6,27 @@ Fork: https://sourceforge.net/p/kubos/ in Python 3
 
 Need to setup:
 
-1. [Anaconda][1]
+1. [Anaconda][1] (Download **3** version )
 2. [PyCharm Community][2]
-3. [PythonOCC][3], use command promt: 
-> conda install -c conda-forge -c dlr-sc -c pythonocc -c oce pythonocc-core==0.18
-4. Need to setup QT4:
-> conda install qt=4.8.7
+3. [PythonOCC][3]
+4. Need to setup PyQT4
+
+Command prompt for anaconda:
+
+>conda install python=3.5.3
+
+>conda uninstall pyqt
+
+>conda install -c anaconda qt=4.8.7
+
+>conda install -c conda-forge -c dlr-sc -c pythonocc -c oce pythonocc-core==0.17
+
+Tested environment:
+
+- Python 3.5
+- PyQt4
+- PythonOCC 0.17
+
 
 ### Install optional
 

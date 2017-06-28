@@ -13,11 +13,27 @@ Need to setup:
 
 Command prompt for anaconda:
 
->conda install python=3.5.3
+#### Create the environment
+
+>conda create -n py35_qt4 python=3.5 anaconda
+
+
+# Activate the new environment
+activate py35_qt4
+
+
+# Install the PyQt4 package in the new environment
 
 >conda uninstall pyqt
 
 >conda install -c anaconda qt=4.8.7
+
+Use path C:\Anaconda3\envs\py35_qt4\python.exe to your IDE.
+
+>conda install -c dlr-sc -c oce -c pythonocc pythonocc-core
+>conda install -y -c conda-forge freetype=2.7
+
+maybe:
 
 >conda install -c conda-forge -c dlr-sc -c pythonocc -c oce pythonocc-core==0.17
 

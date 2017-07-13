@@ -51,6 +51,12 @@ maybe:
 - [GitHub Desktop][4] 
 
 
+**Do you like this project? Support it by donating**
+
+- Yandex.Money: [Donate](https://money.yandex.ru/to/410015409987387)
+- ![btc](https://camo.githubusercontent.com/4bc31b03fc4026aa2f14e09c25c09b81e06d5e71/687474703a2f2f7777772e6d6f6e747265616c626974636f696e2e636f6d2f696d672f66617669636f6e2e69636f) Bitcoin: 35e1VKWeH5BHzboseYjraa7xWq76sung1v
+
+
 [1]: https://www.continuum.io/downloads/  "Anaconda
   is a freemium open source distribution of the Python and R programming languages for large-scale data processing, predictive analytics, and scientific computing, that aims to simplify package management and deployment"
 [2]:https://www.jetbrains.com/pycharm/download "PyCharm"

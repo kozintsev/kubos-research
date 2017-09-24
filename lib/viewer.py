@@ -25,10 +25,10 @@ if sys.platform != 'win32' and not 'CSF_GraphicShr' in os.environ:
     # Taken from OCC.Display.OCCViewer
     os.environ['CSF_GraphicShr'] = ctypes.util.find_library('TKOpenGl')
 
-class Viewer(QtWidgets.QWidget):
-    
+
+class Viewer(qtViewer3d):
     def __init__(self, doc):
-        QtWidgets.QWidget.__init__(self)
+        qtViewer3d.__init__(self)
         if sys.platform != 'win32' and 'DISPLAY' not in os.environ:
             raise Exception('The DISPLAY environment variable is not set.')
         self._inited = False
@@ -43,42 +43,11 @@ class Viewer(QtWidgets.QWidget):
 
         self.doc = doc
 
-    def GetHandle(self):
-        ''' returns an the identifier of the GUI widget.
-        It must be an integer
-        '''
-        win_id = self.winId()  # this returns either an int or voitptr
-
-        if "%s" % type(win_id) == "<type 'PyCObject'>":  # PySide
-            ### with PySide, self.winId() does not return an integer
-            if sys.platform == "win32":
-                ## Be careful, this hack is py27 specific
-                ## does not work with python31 or higher
-                ## since the PyCObject api was changed
-                import ctypes
-                ctypes.pythonapi.PyCObject_AsVoidPtr.restype = ctypes.c_void_p
-                ctypes.pythonapi.PyCObject_AsVoidPtr.argtypes = [
-                    ctypes.py_object]
-                win_id = ctypes.pythonapi.PyCObject_AsVoidPtr(win_id)
-        elif not isinstance(win_id, int):  # PyQt4 or 5
-            ## below integer cast may be required because self.winId() can
-            ## returns a sip.voitptr according to the PyQt version used
-            ## as well as the python version
-            win_id = int(win_id)
-        return win_id
-
     def init2(self):
         """Perform the second initialization step. This should be done
         once the viewer is shown."""
-        self.canvas = qtViewer3d(self)
-        # self.setWindowTitle("pythonOCC-%s 3d viewer" % VERSION)
-        self.canvas.InitDriver()
+        self.InitDriver()
 
-        self._display = self.canvas._display
-        # TODO: on Linux, self.winId returns a 'long' - if this is similar on
-        # other platforms, conversion to int may not be neccessary
-
-        # self._display.Init(self.GetHandle())
         # types: AIS_InteractiveContext, V3d_View, V3d_Viewer
         self.context = self._display.GetContext().GetObject()
         self.view = self._display.GetView().GetObject()
@@ -87,7 +56,7 @@ class Viewer(QtWidgets.QWidget):
         self._inited = True
         # display the trihedron in the bottom right corner
         self.view.TriedronDisplay(Aspect_TOTP_RIGHT_LOWER, Quantity_NOC_BLACK,
-                                  0.08,  V3d.V3d_WIREFRAME)
+                                  0.08, V3d.V3d_WIREFRAME)
         self.view.SetBackgroundColor(Quantity_Color(1, 1, 1, 0))
         self.context.SetDisplayMode(AIS_Shaded)
 
@@ -135,15 +104,17 @@ class Viewer(QtWidgets.QWidget):
                 self.view.MustBeResized()
 
     def wheelEvent(self, event):
-        self.zoom *= 1.001**event.angleDelta().y()
+        self.zoom *= 1.001 ** event.angleDelta().y()
 
     def _get_zoom(self):
         return self._zoom
+
     def _set_zoom(self, value):
         if 0.013 < value < 4000:
             self.view.SetZoom(value / self._zoom)
             self._zoom = value
             self._update_grid_size()
+
     zoom = property(_get_zoom, _set_zoom)
 
     def pan(self, d):
@@ -152,9 +123,10 @@ class Viewer(QtWidgets.QWidget):
     # TODO: rename to 'viewdir'
     def _get_eye(self):
         return self._eye
+
     def _set_eye(self, value):
         value = vec(value)
-        value = value*(1/value.length())
+        value = value * (1 / value.length())
         self.view.SetEye(*value)
         if value[0] == value[1] == 0:
             # this is the only case where the orientation of the view is
@@ -164,6 +136,7 @@ class Viewer(QtWidgets.QWidget):
             # make the z-Axis vertical
             self.view.SetTwist(0)
         self._eye = value
+
     eye = property(_get_eye, _set_eye)
 
     def repaint0(self):
@@ -207,10 +180,12 @@ class Viewer(QtWidgets.QWidget):
     def _get_view_mode(self):
         """"Style in which the view is presented ("wireframe" or "shaded")"""
         return self._view_mode
+
     def _set_view_mode(self, value):
         self._view_mode = value
         if value == 'shaded':
             self.context.SetDisplayMode(AIS_Shaded)
         elif value == 'wireframe':
             self.context.SetDisplayMode(AIS_WireFrame)
+
     view_mode = property(_get_view_mode, _set_view_mode)

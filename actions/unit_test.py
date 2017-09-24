@@ -3,12 +3,17 @@ a window size of 900x600 and might not work on other configurations"""
 
 
 
-from PyQt4.QtTest import QTest
-from PyQt4.QtCore import Qt
+from PyQt5.QtTest import QTest
+
+from PyQt5.QtCore import Qt
+
 
 from gui import win
+
 from lib.action import Action
+
 from lib import qtest
+
 
 # initialize the qtest module
 qtest.init(win)

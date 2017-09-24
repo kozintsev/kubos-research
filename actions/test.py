@@ -1,28 +1,39 @@
 
 
 import imp
+
 
 from OCC import BRepPrimAPI, TopAbs
-from PyQt4 import QtGui
+
 
 import doc
+
 from lib import gp_
+
 from data import appdata
+
 from lib.action import Action
+
 from gui import viewer_3d
+
 from gui import win
+
 from doc import doc_ctrl
+
 from std_events import document_modified
+
 
 
 def sphere1_():
     import random
+
     shape = BRepPrimAPI.BRepPrimAPI_MakeSphere(
                     gp_.gp_Pnt_([0, 0, random.random() * 7]), 1).Shape()
     doc.doc_ctrl.add(shape)
 sphere1 = Action(sphere1_, ('Te&sts', '&Sphere1'))
 
 from OCC import GC, BRepBuilderAPI
+
 
 
 def segment_():
@@ -62,7 +73,9 @@ list_data = Action(list_data_, ('Te&sts', 'List &Data'))
 
 def list_children_():
     from lib import label_util
+
     import doc
+
     print(label_util.child_list(doc.doc_ctrl.top_label))
 list_children = Action(list_children_, ('Te&sts', 'List &Children'))
 

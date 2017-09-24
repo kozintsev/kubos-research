@@ -1,12 +1,10 @@
-
-
 import sys, os
 import ctypes.util
 import threading
 import math
 
-from PyQt4 import QtGui
-from PyQt4.QtCore import Qt
+from PyQt5 import QtGui, QtWidgets
+from PyQt5.QtCore import Qt
 from OCC import V3d
 from OCC.Quantity import Quantity_Color, Quantity_NOC_BLACK
 from OCC import TPrsStd
@@ -15,17 +13,22 @@ from OCC.Aspect import Aspect_TOTP_RIGHT_LOWER
 from OCC.Visualization import Display3d
 from OCC.AIS import AIS_Shaded, AIS_Shape, AIS_WireFrame
 from OCC.TopoDS import TopoDS_Shape
-
 from lib.vec import vec
+
+from OCC.Display.backend import load_backend, load_pyqt5, PYQT5
+
+load_backend(PYQT5)
+load_pyqt5()
+from OCC.Display.qtDisplay import *
 
 if sys.platform != 'win32' and not 'CSF_GraphicShr' in os.environ:
     # Taken from OCC.Display.OCCViewer
     os.environ['CSF_GraphicShr'] = ctypes.util.find_library('TKOpenGl')
 
-class Viewer(QtGui.QWidget):
+class Viewer(QtWidgets.QWidget):
     
     def __init__(self, doc):
-        QtGui.QWidget.__init__(self)
+        QtWidgets.QWidget.__init__(self)
         if sys.platform != 'win32' and 'DISPLAY' not in os.environ:
             raise Exception('The DISPLAY environment variable is not set.')
         self._inited = False
@@ -40,13 +43,42 @@ class Viewer(QtGui.QWidget):
 
         self.doc = doc
 
+    def GetHandle(self):
+        ''' returns an the identifier of the GUI widget.
+        It must be an integer
+        '''
+        win_id = self.winId()  # this returns either an int or voitptr
+
+        if "%s" % type(win_id) == "<type 'PyCObject'>":  # PySide
+            ### with PySide, self.winId() does not return an integer
+            if sys.platform == "win32":
+                ## Be careful, this hack is py27 specific
+                ## does not work with python31 or higher
+                ## since the PyCObject api was changed
+                import ctypes
+                ctypes.pythonapi.PyCObject_AsVoidPtr.restype = ctypes.c_void_p
+                ctypes.pythonapi.PyCObject_AsVoidPtr.argtypes = [
+                    ctypes.py_object]
+                win_id = ctypes.pythonapi.PyCObject_AsVoidPtr(win_id)
+        elif not isinstance(win_id, int):  # PyQt4 or 5
+            ## below integer cast may be required because self.winId() can
+            ## returns a sip.voitptr according to the PyQt version used
+            ## as well as the python version
+            win_id = int(win_id)
+        return win_id
+
     def init2(self):
         """Perform the second initialization step. This should be done
         once the viewer is shown."""
-        self._display = Display3d()
+        self.canvas = qtViewer3d(self)
+        # self.setWindowTitle("pythonOCC-%s 3d viewer" % VERSION)
+        self.canvas.InitDriver()
+
+        self._display = self.canvas._display
         # TODO: on Linux, self.winId returns a 'long' - if this is similar on
         # other platforms, conversion to int may not be neccessary
-        self._display.Init(int(self.winId()))
+
+        # self._display.Init(self.GetHandle())
         # types: AIS_InteractiveContext, V3d_View, V3d_Viewer
         self.context = self._display.GetContext().GetObject()
         self.view = self._display.GetView().GetObject()
@@ -103,7 +135,7 @@ class Viewer(QtGui.QWidget):
                 self.view.MustBeResized()
 
     def wheelEvent(self, event):
-        self.zoom *= 1.001**event.delta()
+        self.zoom *= 1.001**event.angleDelta().y()
 
     def _get_zoom(self):
         return self._zoom

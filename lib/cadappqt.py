@@ -1,5 +1,7 @@
 # set the PyQt APIs to version 2 (this must be done before
 from sip import setapi
+
+
 try:
     for api in ['QDate', 'QDateTime', 'QString', 'QVariant', 'QTextStream',
                 'QTime', 'QUrl']:
@@ -11,13 +13,11 @@ except ValueError:
                         "CadAppQt before importing anything from PyQt")
     raise
 
-
 import sys
 from lib import importlib as _importlib
-
-from PyQt4.QtGui import QApplication
-from PyQt4 import QtCore
-from PyQt4.QtGui import QActionGroup
+from PyQt5.QtWidgets import QApplication
+from PyQt5 import QtCore
+from PyQt5.QtWidgets import QActionGroup
 
 class CadAppQt(object):
     """Base class for CAD applications using the Qt framework.
@@ -31,6 +31,8 @@ class CadAppQt(object):
         # Initializing a QApplication changes the system locale for
         # the running program - resetting to default ('C')
         from locale import setlocale, LC_ALL
+
+
         setlocale(LC_ALL, 'C')
 
     def load_action(self, action, toolbar_area=QtCore.Qt.TopToolBarArea,

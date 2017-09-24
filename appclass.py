@@ -3,8 +3,7 @@ from os import path as _path
 from data import appdata
 from lib.cadappqt import CadAppQt
 from doc import doc_ctrl
-
-from PyQt4.QtGui import QIcon as _QIcon
+from PyQt5.QtGui import QIcon as _QIcon
 
 
 class KubosApp(CadAppQt):
@@ -38,6 +37,8 @@ class KubosApp(CadAppQt):
         self.doc = doc_ctrl
         # 'win' cannot be imported before creating a QApplication
         from gui import win
+
+
         self.win = win
         self.update_title()
         self.viewer = win.viewer_3d
@@ -48,23 +49,17 @@ class KubosApp(CadAppQt):
         self._toolbars = {}
 
     def run(self):
-
         import std_events
-
         self.win.showMaximized()
         # second initialization step for the viewer - must be called once
         # the window is being shown
         self.win.viewer_3d.init2()
-
         #if appdata.get('mode') != 'script':
         self.win.viewer_3d.grid = True
-
         #if appdata.get('mode') in ['test', 'standard']:
         self.show_statusbar()
-
         std_events.filename_changed.connect(self.update_title)
         std_events.dirty_changed.connect(self.update_title)
-
         std_events.new_step_activated.connect(self.update_status)
 
         """
@@ -130,6 +125,8 @@ class KubosApp(CadAppQt):
     def update_status(self):
         """Update the text in the status bar"""
         import active_tool
+
+
         if appdata.get('mode') not in ['standard', 'test']:
             return
         name = active_tool.active_tool.menu[-1].replace('&', '')
@@ -139,5 +136,7 @@ class KubosApp(CadAppQt):
 
     def show_statusbar(self):
         from lib.message_area import MessageArea
+
+
         self._message_area = MessageArea()
         self.win.statusBar().addWidget(self._message_area)

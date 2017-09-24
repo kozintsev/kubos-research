@@ -1,18 +1,23 @@
 
 
-from PyQt4 import QtGui
-from PyQt4.QtCore import Qt, QSize
+from PyQt5 import QtGui, QtWidgets
+from PyQt5.QtCore import Qt, QSize
+
 
 from lib import gp_
+
 import std_events
+
 from data import appdata
+
 import active_tool
+
 
 
-class CommandDockWidget(QtGui.QDockWidget):
+class CommandDockWidget(QtWidgets.QDockWidget):
 
     def __init__(self, parent=None):
-        QtGui.QDockWidget.__init__(self, 'Command')
+        QtWidgets.QDockWidget.__init__(self, 'Command')
         self.setWhatsThis(
             'Command input\n\n'
             'Enter the coordinates of a point.\n'
@@ -21,13 +26,13 @@ class CommandDockWidget(QtGui.QDockWidget):
             'shortcut: C')
         self.line_edit = LineEdit()
         self.setWidget(self.line_edit)
-        self.setFeatures(QtGui.QDockWidget.NoDockWidgetFeatures)
+        self.setFeatures(QtWidgets.QDockWidget.NoDockWidgetFeatures)
 
 
-class LineEdit(QtGui.QLineEdit):
+class LineEdit(QtWidgets.QLineEdit):
 
     def __init__(self):
-        QtGui.QLineEdit.__init__(self)
+        QtWidgets.QLineEdit.__init__(self)
         self._previous_command_input = None
 
         std_events.input_changed.connect(self.update_command)
@@ -57,7 +62,7 @@ class LineEdit(QtGui.QLineEdit):
                                  Qt.Key_Backspace, Qt.Key_Delete]
               or event.key() == Qt.Key_A and event.modifiers() ==
                              Qt.ControlModifier):
-            QtGui.QLineEdit.keyPressEvent(self, event)
+            QtWidgets.QLineEdit.keyPressEvent(self, event)
             self._update_input_point()
         else:
             event.ignore()

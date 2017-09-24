@@ -1,49 +1,53 @@
 
 
-from PyQt4 import QtGui
+from PyQt5 import QtGui, QtWidgets
 
 import std_events
+
 from doc import doc_ctrl
+
 # import doc
 from lib.label_util import tag_list
+
 
 import gui
+
 
 
-class ObjectDetailsDock(QtGui.QDockWidget):
+class ObjectDetailsDock(QtWidgets.QDockWidget):
 
     def __init__(self, parent):
-        QtGui.QDockWidget.__init__(self, 'Object Details')
-        layout = QtGui.QVBoxLayout()
+        QtWidgets.QDockWidget.__init__(self, 'Object Details')
+        layout = QtWidgets.QVBoxLayout()
 
-        self.tag_label = QtGui.QLabel('Tag: ')
+        self.tag_label = QtWidgets.QLabel('Tag: ')
 
-        red = QtGui.QPushButton(QtGui.QIcon.fromTheme('red'), '')
+        red = QtWidgets.QPushButton(QtGui.QIcon.fromTheme('red'), '')
         red.clicked.connect(self.on_red)
-        orange = QtGui.QPushButton(QtGui.QIcon.fromTheme('orange'), '')
+        orange = QtWidgets.QPushButton(QtGui.QIcon.fromTheme('orange'), '')
         orange.clicked.connect(self.on_orange)
-        yellow = QtGui.QPushButton(QtGui.QIcon.fromTheme('yellow'), '')
+        yellow = QtWidgets.QPushButton(QtGui.QIcon.fromTheme('yellow'), '')
         yellow.clicked.connect(self.on_yellow)
-        green = QtGui.QPushButton(QtGui.QIcon.fromTheme('green'), '')
+        green = QtWidgets.QPushButton(QtGui.QIcon.fromTheme('green'), '')
         green.clicked.connect(self.on_green)
-        blue = QtGui.QPushButton(QtGui.QIcon.fromTheme('blue'), '')
+        blue = QtWidgets.QPushButton(QtGui.QIcon.fromTheme('blue'), '')
         blue.clicked.connect(self.on_blue)
-        purple = QtGui.QPushButton(QtGui.QIcon.fromTheme('purple'), '')
+        purple = QtWidgets.QPushButton(QtGui.QIcon.fromTheme('purple'), '')
         purple.clicked.connect(self.on_purple)
-        color_layout = QtGui.QGridLayout()
+        color_layout = QtWidgets.QGridLayout()
         color_layout.addWidget(red, 0, 0)
         color_layout.addWidget(orange, 0, 1)
         color_layout.addWidget(yellow, 0, 2)
         color_layout.addWidget(green, 0, 3)
         color_layout.addWidget(blue, 1, 0)
         color_layout.addWidget(purple, 1, 1)
-        color_picker = QtGui.QLabel()
+        color_picker = QtWidgets.QLabel()
         color_picker.setLayout(color_layout)
 
         #layout.addWidget(self.tag_label)
         layout.addWidget(color_picker)
 
-        widget = QtGui.QWidget()
+        widget = QtWidgets.QWidget()
         widget.setLayout(layout)
         widget.setMinimumWidth(180)
         widget.setMaximumHeight(100)

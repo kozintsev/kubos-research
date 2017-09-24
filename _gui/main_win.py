@@ -1,14 +1,33 @@
-from PyQt4.QtCore import Qt, QSize
-from PyQt4.QtGui import QMainWindow, QSplitter
+from PyQt5.QtCore import Qt, QSize
+
+
+from PyQt5.QtWidgets import *
+from PyQt5.QtGui import *
 
 import tools
+
+
 import active_tool
+
+
 from data import appdata
+
+
 from doc import doc_ctrl
+
+
 from _gui.command import CommandDockWidget
+
+
 from _gui.object_details import ObjectDetailsDock
+
+
 from _gui.viewer import KubosViewer
+
+
 from _gui.tool_options import ToolOptionsDock
+
+
 
 
 class MainWindow(QMainWindow):
@@ -22,6 +41,8 @@ class MainWindow(QMainWindow):
 
         #if appdata.get('mode') == 'script':
         from _gui.text_edit import TextEdit
+
+
         self.editor = TextEdit()
         self._splitter.addWidget(self.editor)
 
@@ -44,6 +65,8 @@ class MainWindow(QMainWindow):
     def closeEvent(self, event):
         # delayed circular import:
         import actions.file
+
+
         actions.file.quit_()
         event.ignore()
 

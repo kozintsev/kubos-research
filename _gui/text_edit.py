@@ -1,8 +1,9 @@
 
 
-from PyQt4.Qt import QPlainTextEdit
-from PyQt4.QtGui import QFont
-from PyQt4.QtCore import QSize
+from PyQt5.QtWidgets import QPlainTextEdit
+from PyQt5.QtGui import QFont
+from PyQt5.QtCore import QSize
+
 
 
 class TextEdit(QPlainTextEdit):

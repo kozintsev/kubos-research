@@ -1,12 +1,16 @@
 
 
-from PyQt4 import QtCore
+from PyQt5 import QtCore
 
 from OCC import gp, BRepPrimAPI, BRepBuilderAPI, TopoDS
+
 
 from lib.vec import vec
+
 from tools.tool import Tool
+
 from exceptions_ import InvalidInputException
+
 
 
 class Extrude(Tool):
@@ -27,6 +31,7 @@ class Extrude(Tool):
     def preview(self, input, direction):
         if self.step == 0:
             from OCC import TopExp, TopAbs, BRep
+
             exp = TopExp.TopExp_Explorer(input, TopAbs.TopAbs_VERTEX)
             v1 = TopoDS.topods_Vertex(exp.Current())
             v1_ = BRep.BRep_Tool.Pnt(TopoDS.TopoDS_Vertex(v1))

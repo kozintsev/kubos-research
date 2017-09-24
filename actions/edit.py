@@ -1,11 +1,15 @@
 
 
-from PyQt4.QtGui import QKeySequence
+from PyQt5.QtGui import QKeySequence
 
 from lib.action import Action
+
 import std_events
+
 from gui import viewer_3d
+
 from doc import doc_ctrl
+
 
 
 def undo_():

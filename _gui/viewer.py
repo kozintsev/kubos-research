@@ -1,19 +1,31 @@
 import sys
+
 import math
+
 
-from PyQt4 import QtCore, QtGui
+from PyQt5 import QtCore, QtGui
 from OCC.Aspect import Aspect_GDM_Lines, Aspect_GT_Rectangular
+
 from OCC import TopAbs
+
 from OCC.gp import gp_Ax3, gp_Dir
+
 from OCC.Quantity import Quantity_Color
+
 
 from lib.gp_ import gp_Pnt_
+
 from lib.viewer import Viewer
+
 
 from data import appdata
+
 import std_events
+
 import active_tool
+
 import tools.select
+
 
 # some of this module was taken from OCC.Display.OCCViewer
 # It might be a good idea to look at code of that module if this one

@@ -1,9 +1,13 @@
 
 
 from exceptions_ import InvalidInputException
+
 from tools.select import select
+
 import std_events
+
 from data import appdata
+
 
 
 def activate_tool(tool):

@@ -2,10 +2,14 @@
 
 
 from OCC import TopoDS
+
 
 from lib import gp_
+
 from lib.appdata import Appdata
+
 import std_events
+
 
 
 appdata = Appdata()

@@ -1,17 +1,25 @@
 
 
 import sys
+
 import os
+
 import subprocess
+
 
-from PyQt4 import QtGui
-from PyQt4.QtGui import QMessageBox
+from PyQt5 import QtGui, QtWidgets
+from PyQt5.QtWidgets import QMessageBox
 
 from lib.action import Action
+
 import std_events
+
 from data import appdata
+
 from gui import win
+
 from doc import doc_ctrl
+
 
 
 def new_():
@@ -24,8 +32,8 @@ def new_():
 def open_():
     """Open a STEP file."""
 
-    filename = QtGui.QFileDialog.getOpenFileName(
-                win, 'Open File', appdata.get('filename'), 'STEP files (*.stp *.step)')
+    filename = QtWidgets.QFileDialog.getOpenFileName(
+                win, 'Open File', appdata.get('filename'), 'STEP files (*.stp *.step)')[0]
     if not filename:
         # cancelled by the user
         return
@@ -53,9 +61,9 @@ def _save():
 
 
 def _save_as():
-    filename = QtGui.QFileDialog.getSaveFileName(
+    filename = QtWidgets.QFileDialog.getSaveFileName(
           win, 'Save File', appdata.get('filename'), 
-          'STEP files (*.stp *.step)')
+          'STEP files (*.stp *.step)')[0]
     if filename:
         appdata.set('filename', filename)
         doc_ctrl.save(appdata.get('filename'))

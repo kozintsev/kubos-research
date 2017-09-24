@@ -1,18 +1,31 @@
 from collections import OrderedDict
+
 from contextlib import contextmanager
+
 import os
+
 import shutil
+
 import uuid
+
 
 from OCC import XCAFApp, TDocStd, XCAFDoc, TopLoc, gp
+
 from OCC.TCollection import TCollection_ExtendedString
+
 from OCC.Quantity import Quantity_Color
+
 from OCC import TopoDS, TopAbs
+
 from OCC.STEPControl import STEPControl_AsIs
+
 
 from lib import tempfile_
+
 from lib.subshapes import subshapes
+
 from std_events import document_modified
+
 
 
 class DocCtrl(object):
@@ -57,7 +70,9 @@ class DocCtrl(object):
     def open(self, file):
         """Open a STEP file"""
         from OCC.STEPControl import STEPControl_Reader
+
         from OCC.IFSelect import IFSelect_RetDone, IFSelect_ItemsByEntity
+
         # Remove all existing shapes
         self.clear()
 
@@ -87,6 +102,7 @@ class DocCtrl(object):
             for compound in subshapes(comp, TopAbs.TopAbs_COMPOUND):
                 for shape in subshapes(compound, TopAbs.TopAbs_SOLID):
                     from lib import copy_geom
+
                     # FIXME: This is a very ugly workaround, get rid of it:
                     #    Each shape is copied before adding it to the document
                     #    Otherwise the method get_comp_label would not find
@@ -100,6 +116,7 @@ class DocCtrl(object):
     def save(self, file):
         """Save to a file in STEP format"""
         from OCC.STEPCAFControl import STEPCAFControl_Writer
+
         writer = STEPCAFControl_Writer()
         writer.Transfer(self.document.GetHandle(), STEPControl_AsIs)
         # WORKAROUND: See comment for function 'open'
@@ -187,6 +204,7 @@ class ShapeToolCtrl(object):
         # this can be used instead of "shape_tool.AddShape" and should provide
         # the same functionality.
         from OCC import TNaming
+
         # equivalent of "XCAFDoc_ShapeTool::addShape"
         doc_ctrl = DocCtrl()
         new_label = doc_ctrl.top_label.NewChild()

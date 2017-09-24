@@ -1,9 +1,11 @@
 
 
 from threading import Timer
+
 
-from PyQt4.QtGui import QLabel
-from PyQt4.QtCore import QSize
+from PyQt5.QtWidgets import QLabel
+from PyQt5.QtCore import QSize
+
 
 
 class MessageArea(QLabel):

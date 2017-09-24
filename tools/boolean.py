@@ -1,10 +1,14 @@
-from PyQt4 import QtCore
+from PyQt5 import QtCore
 from OCC import TopAbs
+
 
 from lib import boolean
+
 from tools.tool import Tool
+
 
 from exceptions_ import InvalidInputException, ConstructionError
+
 
 
 class Intersection(Tool):

@@ -1,18 +1,28 @@
 
 
 import imp
+
 import sys
+
 from os import path
+
 import subprocess
+
 import builtins
+
 
-from PyQt4 import QtGui
+from PyQt5 import QtGui, QtWidgets
 
 from data import appdata
+
 from lib.action import Action
+
 from gui import editor
+
 from gui import win
+
 from doc import doc_ctrl
+
 
 module = None
 
@@ -70,8 +80,8 @@ def exec_script():
         except AttributeError:
             pass
     except Exception as e:
-        msgbox = QtGui.QMessageBox(win)
-        msgbox.setStandardButtons(QtGui.QMessageBox.Ok)
+        msgbox = QtWidgets.QMessageBox(win)
+        msgbox.setStandardButtons(QtWidgets.QMessageBox.Ok)
         msgbox.setText('Error while opening file')
         text = ("While trying to open the file '{0}' the following " +
                 'exception was raised:\n"{1}"').format(filename, e)
@@ -79,6 +89,7 @@ def exec_script():
                     'Exception: {1}\n'+
                     '{2}').format(*sys.exc_info())
         import traceback
+
         detailed = traceback.format_exc()
         msgbox.setInformativeText(text)
         msgbox.setDetailedText(detailed)
@@ -89,9 +100,9 @@ def open_script_():
     """Show a file dialog to open an existing script."""
     examples_path = path.join(path.dirname(appdata.get('APPDIR')),
                               'examples/kubos_script')
-    filename = QtGui.QFileDialog.getOpenFileName(
+    filename = QtWidgets.QFileDialog.getOpenFileName(
                 win, 'Open Script', appdata.get('filename') or examples_path,
-                'Python files (*.py)')
+                'Python files (*.py)')[0]
     if not filename:
         # cancelled by the user
         return
@@ -112,9 +123,9 @@ open_script = Action(open_script_, ['&File', '&Open Script'],
 
 def save_script_as_():
     """Show a file dialog to save the opened script under a certian name."""
-    filename = QtGui.QFileDialog.getSaveFileName(
+    filename = QtWidgets.QFileDialog.getSaveFileName(
                 win, 'Save Script', appdata.get('filename'),
-                'Python scripts (*.py)')
+                'Python scripts (*.py)')[0]
     if filename:
         appdata.set('filename', filename)
         with open(filename, 'w') as script:
@@ -154,8 +165,8 @@ def export_():
     """Open a file dialog which lets the user export the document in STEP
     format"""
     fname = path.splitext(appdata.get('filename'))[0] + '.step'
-    filename = QtGui.QFileDialog.getSaveFileName(
-          win, 'Export File', fname, 'STEP files (*.stp *.step)')
+    filename = QtWidgets.QFileDialog.getSaveFileName(
+          win, 'Export File', fname, 'STEP files (*.stp *.step)')[0]
     if filename:
         doc_ctrl.save(appdata.get('filename'))
 export = Action(export_, ['&File', 'E&xport'],

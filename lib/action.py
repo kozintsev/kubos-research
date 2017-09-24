@@ -1,5 +1,5 @@
-from PyQt4.QtGui import QAction
-from PyQt4.QtGui import QIcon
+from PyQt5.QtWidgets import QAction
+from PyQt5.QtGui import QIcon
 
 
 class Action(QAction):

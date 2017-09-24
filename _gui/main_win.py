@@ -1,30 +1,13 @@
 from PyQt5.QtCore import Qt, QSize
-
-
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
-
 import tools
-
-
 import active_tool
-
-
 from data import appdata
-
-
 from doc import doc_ctrl
-
-
 from _gui.command import CommandDockWidget
-
-
 from _gui.object_details import ObjectDetailsDock
-
-
 from _gui.viewer import KubosViewer
-
-
 from _gui.tool_options import ToolOptionsDock
 
 

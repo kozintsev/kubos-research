@@ -121,9 +121,9 @@ class FilePatcher:
                     self.error("QtWidgets import missing")
 
 
-script_dir = get_script_path();
+script_dir = get_script_path()
 
 for root, dirs, files in os.walk(script_dir):
     for file in files:
-        if file.endswith('.py'):
+        if file.endswith('.py') and file.find('pyqt4topyqt5.py') == -1:
             FilePatcher(os.path.join(root, file)).patch()

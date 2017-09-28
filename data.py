@@ -1,19 +1,10 @@
 # -*- coding: UTF-8 -*-
-
-
 from OCC import TopoDS
-
-
 from lib import gp_
-
 from lib.appdata import Appdata
-
 import std_events
-
-
 
 appdata = Appdata()
-
 
 def on_doc_modified():
     appdata.set('dirty', True)

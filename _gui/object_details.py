@@ -1,18 +1,9 @@
-
-
 from PyQt5 import QtGui, QtWidgets
-
 import std_events
-
 from doc import doc_ctrl
-
 # import doc
 from lib.label_util import tag_list
-
-
 import gui
-
-
 
 class ObjectDetailsDock(QtWidgets.QDockWidget):
 

@@ -1,21 +1,12 @@
 
-
 from PyQt5 import QtGui, QtWidgets
 from PyQt5.QtCore import Qt, QSize
-
-
 from lib import gp_
-
 import std_events
-
 from data import appdata
-
 import active_tool
-
-
 
 class CommandDockWidget(QtWidgets.QDockWidget):
-
     def __init__(self, parent=None):
         QtWidgets.QDockWidget.__init__(self, 'Command')
         self.setWhatsThis(

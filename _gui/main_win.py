@@ -11,8 +11,6 @@ from _gui.viewer import KubosViewer
 from _gui.tool_options import ToolOptionsDock
 
 
-
-
 class MainWindow(QMainWindow):
 
     def __init__(self, *args):

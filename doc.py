@@ -1,17 +1,9 @@
 
-
 from lib.doc_ctrl import DocCtrl
-
-
 from PyQt5.QtCore import Qt
-
-
 from data import appdata
-
 import std_events
-
 import active_tool
-
 
 
 class KubosDoc(DocCtrl):
@@ -28,7 +20,8 @@ class KubosDoc(DocCtrl):
     def remove_random(self):
         """Remove a random shape from the document (for testing)"""
         import random
-
+
+
         label = random.choice(list(self._label_dict.values()))
 
         with self.open_command():
@@ -53,7 +46,8 @@ class KubosDoc(DocCtrl):
     def on_input_accepted(self):
         """Handle the "input_accepted" event"""
         from gui import tool_options_dock
-
+
+
         if not appdata.get('input_valid'):
             std_events.invalid_input_accepted.emit()
             return

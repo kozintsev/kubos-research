@@ -32,8 +32,7 @@ class KubosApp(CadAppQt):
         else:
             appdata.set('icon', _QIcon.fromTheme('kubos'))
 
-        appdata.set('AUTHORS', 'Marko Knöbl')
-        appdata.set('VERSION', '0.2b2')
+        appdata.set('AUTHORS', 'Marko Knöbl, Oleg Kozintsev')
         self.doc = doc_ctrl
         # 'win' cannot be imported before creating a QApplication
         from gui import win

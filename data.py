@@ -6,8 +6,10 @@ import std_events
 
 appdata = Appdata()
 
+
 def on_doc_modified():
     appdata.set('dirty', True)
+
 
 std_events.document_modified.connect(on_doc_modified)
 
@@ -17,10 +19,12 @@ def on_dirty_set(value):
         appdata.sset('dirty', value)
         std_events.dirty_changed.emit()
 
+
 def on_filename_set(value):
     if appdata.get('filename') != value:
         appdata.sset('filename', value)
         std_events.filename_changed.emit()
+
 
 def on_input_set(new_input):
     # Emit a signal if the new input is different from the previous one

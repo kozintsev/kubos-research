@@ -1,5 +1,6 @@
 import sys
 from os import path
+
 # add the package directory to sys.path
 # this ensures that the application will work if it is intalled through
 #    "python setup.py develop --user"

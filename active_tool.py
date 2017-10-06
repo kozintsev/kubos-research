@@ -3,6 +3,7 @@ from tools.select import select
 import std_events
 from data import appdata
 
+
 def activate_tool(tool):
     appdata.set('input', None)
     global active_tool
@@ -40,6 +41,7 @@ def preview_from_current_input():
     else:
         appdata.set('input_valid', True)
         return a
+
 
 active_tool = None
 activate_select_tool()

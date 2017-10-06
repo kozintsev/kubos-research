@@ -11,14 +11,16 @@ from OCC.STEPControl import STEPControl_AsIs
 from lib import tempfile_
 from lib.subshapes import subshapes
 from std_events import document_modified
+from OCC.Display.OCCViewer import Viewer3d
 
 
-class DocCtrl(object):
+class DocCtrl(Viewer3d):
     """Generic document controller.
 
     This class manages a "TDocStd_Document" which is accessible through
     "self.document"."""""
     def __init__(self):
+        # Viewer3d.__init__()
         # is the document empy and unmodified?
         self.isnew = True
 

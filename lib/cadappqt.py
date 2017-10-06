@@ -1,16 +1,15 @@
 # set the PyQt APIs to version 2 (this must be done before
 from sip import setapi
 
-
 try:
     for api in ['QDate', 'QDateTime', 'QString', 'QVariant', 'QTextStream',
                 'QTime', 'QUrl']:
         setapi(api, 2)
 except ValueError:
-    print("Kubos or the Kubos library can only be used with "+
-                        "version 2 of the PyQt API. Use 'sip.setapi' to "+
-                        "change the API before importing from PyQt or import "+
-                        "CadAppQt before importing anything from PyQt")
+    print("Kubos or the Kubos library can only be used with " +
+          "version 2 of the PyQt API. Use 'sip.setapi' to " +
+          "change the API before importing from PyQt or import " +
+          "CadAppQt before importing anything from PyQt")
     raise
 
 import sys
@@ -18,6 +17,7 @@ from lib import importlib as _importlib
 from PyQt5.QtWidgets import QApplication
 from PyQt5 import QtCore
 from PyQt5.QtWidgets import QActionGroup
+
 
 class CadAppQt(object):
     """Base class for CAD applications using the Qt framework.
@@ -31,7 +31,6 @@ class CadAppQt(object):
         # Initializing a QApplication changes the system locale for
         # the running program - resetting to default ('C')
         from locale import setlocale, LC_ALL
-
 
         setlocale(LC_ALL, 'C')
 
@@ -89,7 +88,6 @@ class CadAppQt(object):
         for tool in module.list:
             self.load_action(tool.action, QtCore.Qt.LeftToolBarArea,
                              module.toolbar_visible)
-
 
     def exec_(self, *args, **kwargs):
         self._qapp.exec_(*args, **kwargs)

@@ -1,4 +1,3 @@
-
 from lib.doc_ctrl import DocCtrl
 from PyQt5.QtCore import Qt
 from data import appdata
@@ -20,7 +19,6 @@ class KubosDoc(DocCtrl):
     def remove_random(self):
         """Remove a random shape from the document (for testing)"""
         import random
-
 
         label = random.choice(list(self._label_dict.values()))
 
@@ -47,7 +45,6 @@ class KubosDoc(DocCtrl):
         """Handle the "input_accepted" event"""
         from gui import tool_options_dock
 
-
         if not appdata.get('input_valid'):
             std_events.invalid_input_accepted.emit()
             return
@@ -60,12 +57,13 @@ class KubosDoc(DocCtrl):
             with self.open_command():
                 for shape in shapes:
                     self.add(shape)
-                if tool_options_dock.copy_checkbox.checkState()==Qt.Unchecked:
+                if tool_options_dock.copy_checkbox.checkState() == Qt.Unchecked:
                     for shape in active_tool.active_tool.remove:
                         self.remove(shape)
             std_events.document_modified.emit()
             active_tool.active_tool.reset()
             std_events.construction_finished.emit()
+
 
 # some features are not needed for the script mode (e.g. interactive input)
 #  - use the simpler DocCtrl in that case
